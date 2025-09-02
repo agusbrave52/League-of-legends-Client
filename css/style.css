@@ -164,4 +164,49 @@ nav .lista-nav {
   border-radius: 50%;
 }
 
+/* Main Aside  */
+main {
+  display: flex;
+  justify-content: flex-end;
+}
+
+aside {
+  background-color: #08101D;
+  margin: 0;
+  height: 100%;
+  width: 350px;
+}
+aside p {
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: medium;
+  font-weight: bold;
+}
+aside div {
+  display: flex;
+  background-color: #08101D;
+  width: 90%;
+  height: 70px;
+  margin: 1px;
+}
+aside .icon {
+  border: rgba(161, 138, 5, 0.959) 3px solid;
+  border-radius: 100%;
+  margin: 10px;
+}
+aside span {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  font-size: large;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-weight: bold;
+}
+aside .status {
+  margin-top: 10px;
+  color: rgb(5, 186, 192);
+  font-weight: normal;
+}
+
 /*# sourceMappingURL=style.css.map */
