@@ -5,8 +5,8 @@ body {
 
 nav {
   background-color: #08101D;
-  padding: 5%;
-  display: flex;
+  padding: 0%;
+  display: inline-flex;
   width: 100%;
   border-top: 2px solid #7a5400;
   align-items: center;
@@ -18,17 +18,24 @@ nav .barra-nav {
   font-weight: 700;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #fff1b4;
-  margin-right: 20px;
-  height: 80px;
-}
-nav .barra-nav:hover {
-  color: #fffbe8;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #08101D;
+  padding: 0 13px 0 13px;
   cursor: pointer;
+}
+nav span:hover {
+  color: #fffbe8;
+  background: linear-gradient(180deg, #08101D 50%, #fff1b4 110%);
+}
+nav .selected {
+  color: #fffbe8;
+  background: linear-gradient(180deg, #08101D 50%, #fff1b4 110%);
 }
 nav .lista-nav {
   display: flex;
-  align-items: center;
-  background-color: #7a5400;
+  height: 100px;
 }
 
 .play-button {
@@ -128,20 +135,33 @@ nav .lista-nav {
   }
 }
 .inf-system {
+  position: relative;
   border: 6px double #08101D;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   margin-left: 2%;
-  background-color: #3fe3f8;
+  background-color: rgb(13.7939698492, 219.824120603, 246.2060301508);
   font-size: large;
   font-weight: 800;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: aliceblue;
   cursor: pointer;
+  z-index: 1;
 }
 .inf-system:hover {
   box-shadow: inset 0 2px 8px #b6f0ff;
+}
+.inf-system::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(180deg, rgba(8, 16, 29, 0) 45%, #08101D 100%);
+  width: 150%;
+  height: 150%;
+  z-index: 2;
+  top: -25%;
+  left: -25%;
+  border-radius: 50%;
 }
 
 /* Main Aside  */

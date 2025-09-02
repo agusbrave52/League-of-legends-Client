@@ -14,8 +14,8 @@ body{
 
 nav {
   background-color: $dark-bg;
-  padding: 5%;
-  display: flex;
+  padding: 0%;
+  display: inline-flex;
   width: 100%;
   border-top: 2px solid $color-borde;
   align-items: center;
@@ -27,19 +27,28 @@ nav {
     font-weight: 700;
     font-family: $font-main;
     color: $light-text;
-    margin-right: 20px;
-    height: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: $dark-bg;
+    padding: 0 13px 0 13px;
+    cursor: pointer;
+  }
 
+  & span {
     &:hover {
       color: $hover-text;
-      cursor: pointer;
+      background: linear-gradient(180deg, $dark-bg 50%, $light-text 110%);
     }
+  }
+  .selected {
+    color: $hover-text;
+    background: linear-gradient(180deg, $dark-bg 50%, $light-text 110%);
   }
 
   .lista-nav {
     display: flex;
-    align-items: center;
-    background-color: $color-borde;
+    height: 100px;
   }
 }
 
@@ -158,22 +167,38 @@ nav {
 
 // -------------------- BOTÓN INFO --------------------
 .inf-system {
+  position: relative;
   border: 6px double $dark-bg;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   margin-left: 2%;
-  background-color: $primary-color;
+  background-color: darken($primary-color, 10%);
   font-size: large;
   font-weight: 800;
   font-family: $font-main;
   color: aliceblue;
   cursor: pointer;
+  z-index: 1;
 
   &:hover {
     box-shadow: inset 0 2px 8px #b6f0ff;
   }
+    &::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(180deg, rgba(8, 16, 29, 0) 45%, $dark-bg 100%);
+    width: 150%;
+    height: 150%;
+    z-index: 2;
+    top: -25%; left: -25%;
+    border-radius: 50%;
+      
+  }
 }
+      
+
+
 
 
 /* Main Aside  */
@@ -226,3 +251,4 @@ aside {
     font-weight: normal;
   }
 }
+
