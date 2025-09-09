@@ -9,12 +9,30 @@ nav {
   background: rgba(8, 16, 29, 0.4);
   padding: 0%;
   display: inline-flex;
-  width: calc(100% - 350px);
+  width: 100%;
   border-top: 2px solid #7a5400;
   align-items: center;
   box-sizing: border-box;
-  gap: 20px;
   backdrop-filter: blur(20px);
+  height: 100px;
+}
+nav .nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 350px);
+  height: 100%;
+}
+nav .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-left: 20px;
+}
+nav .nav-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 nav .barra-nav,
 nav .barra-nav-select {
@@ -34,7 +52,7 @@ nav .barra-nav-select {
   transition: background 0.4s, color 0.4s;
 }
 nav .barra-nav {
-  padding-left: 0px;
+  padding-left: 2%;
 }
 nav .barra-nav-select::before {
   content: "";
@@ -104,8 +122,8 @@ nav .lista-nav {
 nav #lor {
   letter-spacing: 1.5px;
   background: linear-gradient(#fff1b4, 50%, #7a5400 100%);
-  height: 30%;
-  width: 10%;
+  height: 35%;
+  width: 20%;
   padding: 0 3% 0 3%;
   border-radius: 30px;
   z-index: 2;
@@ -274,6 +292,223 @@ nav .inf-system::before {
     box-shadow: 3.5px 0px #3fe3f8;
   }
 }
+.perfil {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  background-color: #08101D;
+  gap: 10px;
+  height: 100px;
+  width: 350px;
+}
+.perfil .experincia {
+  width: 65px;
+  height: 65px;
+  border: rgb(124, 95, 0) 3px solid;
+  border-radius: 100%;
+  margin: 10px;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(from 180deg, rgb(8.2487437186, 201.5050251256, 226.2512562814) calc(var(--percent) * 1%), rgb(30.0540540541, 60.1081081081, 108.9459459459) calc(var(--percent) * 1%));
+}
+.perfil .experincia:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: transparent;
+  border: rgb(175, 134.0725806452, 0) 3px solid;
+}
+.perfil .experincia:hover > .icon-user::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: transparent;
+  border: rgb(175, 134.0725806452, 0) 3px solid;
+}
+.perfil .experincia:hover > .icon-user > .lvl {
+  background: linear-gradient(to top, rgb(175, 134.0725806452, 0) 50%, rgb(255, 200.5080645161, 22) 100%);
+}
+.perfil .experincia .icon-user {
+  display: flex;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: rgb(124, 95, 0) 3px solid;
+  background: black;
+  z-index: 3;
+  background-image: url("../assets/icon-user1.png");
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+.perfil .experincia .icon-user .lvl {
+  display: flex;
+  bottom: -27%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 70%;
+  height: 40%;
+  z-index: 2;
+  background: linear-gradient(to top, rgb(124, 95, 0) 50%, rgb(226, 173.1451612903, 0) 100%);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.perfil .experincia .icon-user .lvl::before {
+  content: attr(data-lvl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #08101D;
+  width: 85%;
+  height: 85%;
+  margin: auto;
+  color: #DDCB9F;
+}
+.perfil .info-perfil {
+  display: block;
+  font-size: large;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #DDCB9F;
+}
+.perfil .info-perfil .usuario {
+  font-weight: bold;
+  font-size: larger;
+}
+.perfil .info-perfil .cambiar-estado {
+  position: absolute;
+  opacity: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: #08101D;
+  border: 2px solid #7a5400;
+  padding: 3px;
+  top: 80px;
+  right: 130px;
+}
+.perfil .info-perfil .en-linea {
+  color: rgb(0, 158, 13);
+  cursor: pointer;
+}
+.perfil .info-perfil .en-linea i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(0, 75, 6);
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 2px solid rgb(0, 158, 13);
+}
+.perfil .info-perfil .en-linea:hover ~ .cambiar-estado {
+  transition: opacity 0.4s;
+  opacity: 1;
+}
+.perfil .info-perfil .ausente {
+  cursor: pointer;
+}
+.perfil .info-perfil .ausente i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(100, 0, 0);
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 2px solid rgb(197, 1, 1);
+}
+.perfil .info-perfil .ausente:hover ~ .cambiar-estado {
+  transition: opacity 0.4s;
+  opacity: 1;
+}
+.perfil .info-perfil .en-cola {
+  color: #3fe3f8;
+  cursor: pointer;
+}
+.perfil .info-perfil .en-cola i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(0, 87, 94);
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 2px solid rgb(0, 197, 211);
+}
+.perfil .info-perfil .en-cola:hover ~ .cambiar-estado {
+  transition: opacity 0.4s;
+  opacity: 1;
+}
+.perfil .info-perfil .partida-casual {
+  color: rgb(0, 158, 13);
+  cursor: pointer;
+}
+.perfil .info-perfil .partida-casual i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(0, 75, 6);
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 2px solid rgb(0, 158, 13);
+}
+.perfil .info-perfil .partida-casual:hover ~ .cambiar-estado {
+  transition: opacity 0.4s;
+  opacity: 1;
+}
+.perfil .info-perfil .cambiar-active {
+  position: absolute;
+  opacity: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: #08101D;
+  border: 2px solid #7a5400;
+  padding: 3px;
+  top: 20px;
+  right: 15px;
+}
+.perfil .info-perfil .notificaciones {
+  position: absolute;
+  right: 15px;
+  top: 60%;
+  font-size: x-large;
+  color: rgba(192, 192, 192, 0.4235294118);
+  cursor: pointer;
+}
+.perfil .info-perfil .notificaciones:hover ~ .cambiar-active {
+  transition: opacity 0.4s;
+  opacity: 1;
+}
+.perfil .info-perfil .notificaciones.active {
+  position: absolute;
+  right: 15px;
+  top: 60%;
+  font-size: x-large;
+  color: #DDCB9F;
+}
+.perfil .info-perfil .notificaciones.active::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(221, 181, 0);
+  border: 4px solid #08101D;
+  border-radius: 50%;
+  top: -5px;
+  right: -5px;
+}
+
 /* Main Aside  */
 main {
   display: flex;
@@ -285,6 +520,7 @@ aside {
   margin: 0;
   height: 100%;
   width: 350px;
+  border-left: 1px solid #333;
 }
 aside p {
   color: white;
