@@ -301,7 +301,7 @@ nav .inf-system::before {
   height: 100px;
   width: 350px;
 }
-.perfil .experincia {
+.perfil .experiencia {
   width: 65px;
   height: 65px;
   border: rgb(124, 95, 0) 3px solid;
@@ -314,7 +314,7 @@ nav .inf-system::before {
   justify-content: center;
   background: conic-gradient(from 180deg, rgb(8.2487437186, 201.5050251256, 226.2512562814) calc(var(--percent) * 1%), rgb(30.0540540541, 60.1081081081, 108.9459459459) calc(var(--percent) * 1%));
 }
-.perfil .experincia:hover::after {
+.perfil .experiencia:hover::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -323,7 +323,7 @@ nav .inf-system::before {
   background-color: transparent;
   border: rgb(175, 134.0725806452, 0) 3px solid;
 }
-.perfil .experincia:hover > .icon-user::after {
+.perfil .experiencia:hover > .icon-user::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -332,10 +332,10 @@ nav .inf-system::before {
   background-color: transparent;
   border: rgb(175, 134.0725806452, 0) 3px solid;
 }
-.perfil .experincia:hover > .icon-user > .lvl {
+.perfil .experiencia:hover > .icon-user > .lvl {
   background: linear-gradient(to top, rgb(175, 134.0725806452, 0) 50%, rgb(255, 200.5080645161, 22) 100%);
 }
-.perfil .experincia .icon-user {
+.perfil .experiencia .icon-user {
   display: flex;
   position: absolute;
   width: 80%;
@@ -344,13 +344,12 @@ nav .inf-system::before {
   border: rgb(124, 95, 0) 3px solid;
   background: black;
   z-index: 3;
-  background-image: url("../assets/icon-user1.png");
   background-size: cover;
   background-position: center;
   align-items: center;
   justify-content: center;
 }
-.perfil .experincia .icon-user .lvl {
+.perfil .experiencia .icon-user .lvl {
   display: flex;
   bottom: -27%;
   align-items: center;
@@ -362,7 +361,7 @@ nav .inf-system::before {
   background: linear-gradient(to top, rgb(124, 95, 0) 50%, rgb(226, 173.1451612903, 0) 100%);
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
-.perfil .experincia .icon-user .lvl::before {
+.perfil .experiencia .icon-user .lvl::before {
   content: attr(data-lvl);
   display: flex;
   align-items: center;
@@ -388,21 +387,35 @@ nav .inf-system::before {
 .perfil .info-perfil .usuario {
   font-weight: bold;
   font-size: larger;
+  animation: aparecer-fade 0.6s forwards;
+}
+@keyframes aparecer-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .perfil .info-perfil .cambiar-estado {
-  position: absolute;
-  opacity: 0;
-  width: fit-content;
-  height: fit-content;
-  background-color: #08101D;
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  background: rgba(24, 24, 24, 0.8);
+  color: #fffbe8;
   border: 2px solid #7a5400;
-  padding: 3px;
-  top: 80px;
-  right: 130px;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  z-index: 3;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
+  transition: opacity 0.15s;
 }
 .perfil .info-perfil .en-linea {
   color: rgb(0, 158, 13);
   cursor: pointer;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .en-linea i {
   display: inline-block;
@@ -412,13 +425,11 @@ nav .inf-system::before {
   border-radius: 50%;
   margin-right: 5px;
   border: 2px solid rgb(0, 158, 13);
-}
-.perfil .info-perfil .en-linea:hover ~ .cambiar-estado {
-  transition: opacity 0.4s;
-  opacity: 1;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .ausente {
   cursor: pointer;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .ausente i {
   display: inline-block;
@@ -428,14 +439,12 @@ nav .inf-system::before {
   border-radius: 50%;
   margin-right: 5px;
   border: 2px solid rgb(197, 1, 1);
-}
-.perfil .info-perfil .ausente:hover ~ .cambiar-estado {
-  transition: opacity 0.4s;
-  opacity: 1;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .en-cola {
   color: #3fe3f8;
   cursor: pointer;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .en-cola i {
   display: inline-block;
@@ -445,14 +454,12 @@ nav .inf-system::before {
   border-radius: 50%;
   margin-right: 5px;
   border: 2px solid rgb(0, 197, 211);
-}
-.perfil .info-perfil .en-cola:hover ~ .cambiar-estado {
-  transition: opacity 0.4s;
-  opacity: 1;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .partida-casual {
   color: rgb(0, 158, 13);
   cursor: pointer;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .partida-casual i {
   display: inline-block;
@@ -462,21 +469,22 @@ nav .inf-system::before {
   border-radius: 50%;
   margin-right: 5px;
   border: 2px solid rgb(0, 158, 13);
-}
-.perfil .info-perfil .partida-casual:hover ~ .cambiar-estado {
-  transition: opacity 0.4s;
-  opacity: 1;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .cambiar-active {
-  position: absolute;
-  opacity: 0;
-  width: fit-content;
-  height: fit-content;
-  background-color: #08101D;
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  background: rgba(24, 24, 24, 0.8);
+  color: #fffbe8;
   border: 2px solid #7a5400;
-  padding: 3px;
-  top: 20px;
-  right: 15px;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  z-index: 3;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
+  transition: opacity 0.15s;
 }
 .perfil .info-perfil .notificaciones {
   position: absolute;
@@ -485,10 +493,7 @@ nav .inf-system::before {
   font-size: x-large;
   color: rgba(192, 192, 192, 0.4235294118);
   cursor: pointer;
-}
-.perfil .info-perfil .notificaciones:hover ~ .cambiar-active {
-  transition: opacity 0.4s;
-  opacity: 1;
+  animation: aparecer-fade 0.6s forwards;
 }
 .perfil .info-perfil .notificaciones.active {
   position: absolute;
@@ -507,6 +512,176 @@ nav .inf-system::before {
   border-radius: 50%;
   top: -5px;
   right: -5px;
+}
+.perfil .info-perfil .ver-perfil {
+  font-size: small;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: none;
+  animation: aparecer-costado 1s forwards;
+}
+@keyframes aparecer-costado {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.perfil .slider-exp {
+  position: absolute;
+  font-size: small;
+  color: #DDCB9F;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 175px;
+  height: 100px;
+  background-color: #08101D;
+  display: none;
+  z-index: 10;
+  border: 2px solid #7a5400;
+  padding: 5px;
+  padding-top: 0;
+  top: 90px;
+}
+.perfil .slider-exp #expRange {
+  width: 120px;
+  accent-color: #3fe3f8;
+}
+.perfil .slider-exp #expRange::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 30px;
+  background: linear-gradient(to left, #3fe3f8 0%, rgb(19.027027027, 38.0540540541, 68.972972973) 100%);
+  border: none;
+  cursor: pointer;
+}
+.perfil .slider-exp #expRange::-webkit-slider-thumb {
+  margin-top: -3px;
+}
+.perfil .slider-exp #nuevoUsuario {
+  width: 80px;
+  border-radius: 5px;
+  border: 1px solid #7a5400;
+  padding: 2px;
+  background-color: black;
+  color: #DDCB9F;
+}
+.perfil .slider-exp button {
+  font-size: small;
+  background: linear-gradient(to bottom, #3fe3f8 20%, #0b90a1 50%, #0b8a9b);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 2px 5px;
+  margin-left: 5px;
+  color: black;
+  font-weight: bold;
+}
+.perfil .slider-exp button:hover {
+  background: rgb(112.2060301508, 234.175879397, 249.7939698492);
+  border: 2px solid #7a5400;
+}
+.perfil .slider-exp #cantidad-experiencia,
+.perfil .slider-exp #numero-aleatorio,
+.perfil .slider-exp #cambiar-usuario {
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  background: rgba(24, 24, 24, 0.8);
+  color: #fffbe8;
+  border: 2px solid #7a5400;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  z-index: 3;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
+  transition: opacity 0.15s;
+}
+.perfil .slider-exp div {
+  margin: 7px;
+}
+.perfil .boton-perfil {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  background: transparent;
+  border: 2px solid #7a5400;
+  border-radius: 5px;
+  top: 2px;
+  right: 30px;
+  cursor: pointer;
+}
+.perfil #boton-perfil-info {
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  background: rgba(24, 24, 24, 0.8);
+  color: #fffbe8;
+  border: 2px solid #7a5400;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  z-index: 3;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
+  text-align: center;
+}
+.perfil .cuadro-info-Perfil {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  background: #08101D;
+  color: #DDCB9F;
+  border: 2px solid #7a5400;
+  padding: 10px 14px;
+  font-size: small;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
+  width: 400px;
+  height: 250px;
+  top: 50%;
+  right: 360px;
+  background-position: 70% 0%;
+  background-size: 170% 170%;
+  filter: contrast(1.1) saturate(1.2);
+}
+.perfil .cuadro-info-Perfil::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8, 16, 29, 0) 0%, rgba(20, 20, 20, 0.8) 40%, rgb(20, 20, 20) 60%, rgb(20, 20, 20) 100%);
+  z-index: 2;
+}
+.perfil .cuadro-info-Perfil .espacio-cuadro {
+  width: 100%;
+  height: 30%;
+}
+.perfil .cuadro-info-Perfil .icon-user-cuadro {
+  position: relative;
+  display: flex;
+  z-index: 3;
+  background-position: center;
+  background-size: cover;
+  width: 20%;
+  height: 30%;
+}
+
+#generarNumero {
+  font-size: small;
+  background: linear-gradient(to bottom, #3fe3f8 20%, #0b90a1 50%, #0b8a9b);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 2px 5px;
+  margin-left: 5px;
+  color: black;
+  font-weight: bold;
+}
+#generarNumero:hover {
+  background: rgb(112.2060301508, 234.175879397, 249.7939698492);
+  border: 2px solid #7a5400;
 }
 
 /* Main Aside  */
