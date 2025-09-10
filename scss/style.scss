@@ -382,7 +382,7 @@ nav {
   width: 350px;
 
 
-  .experincia {
+  .experiencia {
     width: 65px;
     height: 65px;
     border: $border-icon 3px solid;
@@ -430,7 +430,6 @@ nav {
       border: $border-icon 3px solid;
       background: black;
       z-index: 3;
-      background-image: url('../assets/icon-user1.png');
       background-size: cover;
       background-position: center;
       align-items: center;
@@ -479,23 +478,37 @@ nav {
     .usuario {
       font-weight: bold;
       font-size: larger;
+      animation: aparecer-fade 0.6s forwards;
+    }
+    @keyframes aparecer-fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
-    .cambiar-estado{
-      position: absolute;
-      opacity: 0;
-      width: fit-content;
-      height: fit-content;
-      background-color: $dark-bg;
+    .cambiar-estado {
+      position: fixed;
+      display: none;
+      pointer-events: none;
+      background: #181818cc;
+      color: #fffbe8;
       border: 2px solid $color-borde;
-      padding: 3px;
-      top: 80px;
-      right: 130px;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 1rem;
+      font-family: $font-main;
+      z-index: 3;
+      box-shadow: 0 4px 16px #000a;
+      transition: opacity 0.15s;
     }
 
     .en-linea {
       color: rgb(0, 158, 13);
       cursor: pointer;
+      animation: aparecer-fade 0.6s forwards;
 
       & i {
         display: inline-block;
@@ -505,15 +518,14 @@ nav {
         border-radius: 50%;
         margin-right: 5px;
         border: 2px solid rgb(0, 158, 13);
+        animation: aparecer-fade 0.6s forwards;
       }
-      &:hover ~ .cambiar-estado{
-        transition: opacity 0.4s;
-        opacity: 1;
-      }
+
     }
 
     .ausente {
       cursor: pointer;
+      animation: aparecer-fade 0.6s forwards;
 
       & i {
         display: inline-block;
@@ -523,16 +535,15 @@ nav {
         border-radius: 50%;
         margin-right: 5px;
         border: 2px solid rgb(197, 1, 1);
+        animation: aparecer-fade 0.6s forwards;
       }
-      &:hover ~ .cambiar-estado{
-        transition: opacity 0.4s;
-        opacity: 1;
-      }
+
     }
 
     .en-cola {
       color: $primary-color;
       cursor: pointer;
+      animation: aparecer-fade 0.6s forwards;
 
       & i {
         display: inline-block;
@@ -542,16 +553,15 @@ nav {
         border-radius: 50%;
         margin-right: 5px;
         border: 2px solid rgb(0, 197, 211);
+        animation: aparecer-fade 0.6s forwards;
       }
-      &:hover ~ .cambiar-estado{
-        transition: opacity 0.4s;
-        opacity: 1;
-      }
+
     }
 
     .partida-casual {
       color: rgb(0, 158, 13);
       cursor: pointer;
+      animation: aparecer-fade 0.6s forwards;
 
       & i {
         display: inline-block;
@@ -561,23 +571,25 @@ nav {
         border-radius: 50%;
         margin-right: 5px;
         border: 2px solid rgb(0, 158, 13);
+        animation: aparecer-fade 0.6s forwards;
       }
-      &:hover ~ .cambiar-estado{
-        transition: opacity 0.4s;
-        opacity: 1;
-      }
+
     }
 
-    .cambiar-active{
-      position: absolute;
-      opacity: 0;
-      width: fit-content;
-      height: fit-content;
-      background-color: $dark-bg;
+    .cambiar-active {
+      position: fixed;
+      display: none;
+      pointer-events: none;
+      background: #181818cc;
+      color: #fffbe8;
       border: 2px solid $color-borde;
-      padding: 3px;
-      top: 20px;
-      right: 15px;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 1rem;
+      font-family: $font-main;
+      z-index: 3;
+      box-shadow: 0 4px 16px #000a;
+      transition: opacity 0.15s;
     }
 
     .notificaciones {
@@ -587,13 +599,10 @@ nav {
       font-size: x-large;
       color: #c0c0c06c;
       cursor: pointer;
+      animation: aparecer-fade 0.6s forwards;
 
-      &:hover ~ .cambiar-active{
-        transition: opacity 0.4s;
-        opacity: 1;
-      }
-      
     }
+
     .notificaciones.active {
       position: absolute;
       right: 15px;
@@ -601,7 +610,7 @@ nav {
       font-size: x-large;
       color: #DDCB9F;
 
-      &::after{
+      &::after {
         content: "";
         position: absolute;
         width: 10px;
@@ -613,6 +622,197 @@ nav {
         right: -5px;
       }
     }
+
+    .ver-perfil {
+      font-size: small;
+      font-family: $font-main;
+      display: none;
+      animation: aparecer-costado 1s forwards;
+    }
+    @keyframes aparecer-costado {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .slider-exp {
+    position: absolute;
+    font-size: small;
+    color: #DDCB9F;
+    font-family: $font-main;
+    width: 175px;
+    height: 100px;
+    background-color: $dark-bg;
+    display: none;
+    z-index: 10;
+    border: 2px solid $color-borde;
+    padding: 5px;
+    padding-top: 0;
+    top: 90px;
+
+    #expRange {
+      width: 120px;
+      accent-color: $primary-color;
+
+      &::-webkit-slider-runnable-track {
+        height: 10px;
+        border-radius: 30px;
+        background: linear-gradient(to left, $primary-color 0%, lighten($dark-bg, 10%) 100%);
+        border: none;
+        cursor: pointer;
+      }
+
+      &::-webkit-slider-thumb {
+        margin-top: -3px;
+      }
+    }
+
+    #nuevoUsuario {
+      width: 80px;
+      border-radius: 5px;
+      border: 1px solid $color-borde;
+      padding: 2px;
+      background-color: darken($dark-bg, 10%);
+      color: #DDCB9F;
+    }
+
+    button {
+      font-size: small;
+      background: linear-gradient(to bottom, $primary-color 20%, #0b90a1 50%, #0b8a9b);
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      padding: 2px 5px;
+      margin-left: 5px;
+      color: black;
+      font-weight: bold;
+
+      &:hover {
+        background: lighten($primary-color, 10%);
+        border: 2px solid $color-borde;
+      }
+    }
+
+    #cantidad-experiencia,
+    #numero-aleatorio,
+    #cambiar-usuario {
+      position: fixed;
+      display: none;
+      pointer-events: none;
+      background: #181818cc;
+      color: #fffbe8;
+      border: 2px solid $color-borde;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 1rem;
+      font-family: $font-main;
+      z-index: 3;
+      box-shadow: 0 4px 16px #000a;
+      transition: opacity 0.15s;
+    }
+
+    div {
+      margin: 7px;
+    }
+  }
+
+  .boton-perfil {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background: transparent;
+    border: 2px solid $color-borde;
+    border-radius: 5px;
+    top: 2px;
+    right: 30px;
+    cursor: pointer;
+
+
+  }
+
+  #boton-perfil-info {
+    position: fixed;
+    display: none;
+    pointer-events: none;
+    background: #181818cc;
+    color: #fffbe8;
+    border: 2px solid $color-borde;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 1rem;
+    font-family: $font-main;
+    z-index: 3;
+    box-shadow: 0 4px 16px #000a;
+    text-align: center;
+  }
+
+  // --------------------- Cuadro de info del perfil --------------------
+  .cuadro-info-Perfil{
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    background: $dark-bg;
+    color: #DDCB9F;
+    border: 2px solid $color-borde;
+    padding: 10px 14px;
+    font-size: small;
+    font-family: $font-main;
+    z-index: 1;
+    box-shadow: 0 4px 16px #000a;
+    width: 400px;
+    height: 250px;
+    top: 50%;
+    right: 360px;
+    background-position: 70% 0%;
+    background-size: 170% 170%;
+    filter: contrast(1.1) saturate(1.2);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba($dark-bg, 0) 0%,rgba(20, 20, 20,0.8) 40%, rgba(20, 20, 20,1) 60%, rgba(20, 20, 20, 1) 100%);
+      z-index: 2;
+    }
+    .espacio-cuadro{
+      width: 100%;
+      height: 30%;
+    }
+    .icon-user-cuadro-total{
+    }
+
+    .icon-user-cuadro{
+      position: relative;
+      display: flex;
+      z-index: 3;
+      background-position: center;
+      background-size: cover;
+      width: 20%;
+      height: 30%;
+    }
+  }
+}
+
+#generarNumero {
+  font-size: small;
+  background: linear-gradient(to bottom, $primary-color 20%, #0b90a1 50%, #0b8a9b);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 2px 5px;
+  margin-left: 5px;
+  color: black;
+  font-weight: bold;
+
+  &:hover {
+    background: lighten($primary-color, 10%);
+    border: 2px solid $color-borde;
   }
 }
 

@@ -90,10 +90,23 @@
                             alt="desafios crepusculares" width="30px"></div>
                 </div>
             </div>
-            
+
 
             <div class="perfil">
-                <div class="experincia">
+                <div class="slider-exp">
+                    <p id="cantidad-experiencia">Cantidad experiencia</p>
+                    <div><input type="range" min="0" max="100" value="50" class="slider" id="expRange"
+                            oninput="actualizarExp(this.value)"></div>
+                    <p id="numero-aleatorio">Numero aleatorio </p>
+                    <div><button id="generarNumero" onclick="generarNumeroAleatorio()">Ν</button></div>
+                    <p id="cambiar-usuario">Cambiar Usuario: </p>
+                    <div><input type="text" id="nuevoUsuario" placeholder="Usuario"><button onclick="cambiarUsuario()"
+                            id="nuevoUsuarioBTN">Cambiar</button></div>
+                </div>
+
+                <div class="boton-perfil" onclick="abrirDeslizador()">👓</div>
+                <p id="boton-perfil-info">Activar Modo <br> Desarrollador</p>
+                <div class="experiencia">
                     <div class="icon-user">
                         <div class="lvl" data-lvl="30">
                         </div>
@@ -106,6 +119,23 @@
                     <div class="cambiar-estado">Cambiar estado</div>
                     <div class="notificaciones fa fa-bell" onclick="cambiarActive()"></div>
                     <div class="cambiar-active">Cambiar Active</div>
+                    <div class="ver-perfil"><i class="fas fa-user"></i> Ver Perfil</div>
+                </div>
+
+                <div class="cuadro-info-Perfil">
+                    <div class="espacio-cuadro"></div>
+                    <div class="icon-user-cuadro-total">
+                        <div class="icon-user-cuadro">
+                        </div>
+                        <div class="info-user-cuadro">
+                            <div class="usuario-cuadro">Usuario</div>
+                            <div class="lema-cuadro">#URU</div>
+                            <div class="titulo-cuadro">Ladron</div>
+                            <hr>
+                            <div class="rango-cuadro">Oro I</div>
+                            <div class="desafios-cuadro">Platino</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
