@@ -1,5 +1,5 @@
 let Usuario = {
-    nombre: 'Invocador1',
+    nombre: 'Usuario',
     estado: 'En Línea',
     nivel: 200,
     experiencia: 40,
@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.experiencia').style.setProperty('--percent', Usuario.experiencia); // Cambia el valor a tu porcentaje deseado
     document.querySelector('.lvl').setAttribute('data-lvl', Usuario.nivel); // Cambia el valor a tu nivel deseado
     document.querySelector('.icon-user').style.backgroundImage = `url(${Usuario.icono})`; // Cambia el valor a tu nombre deseado
-    document.querySelector('.icon-user-cuadro').style.backgroundImage = `url(${Usuario.icono})`; // Cambia el valor a tu nombre deseado
+    document.querySelector('.icon-user-cuadro').style.backgroundImage = `url('${Usuario.icono}')`; // Cambia el valor a tu nombre deseado
+    document.querySelector('.usuario').textContent = Usuario.nombre; // Cambia el valor a tu nombre deseado
+    document.querySelector('.usuario-cuadro').textContent = Usuario.nombre;
 
     document.querySelector('.cuadro-info-Perfil').setAttribute('style', `background-image: url(${Usuario.skinFavorita});`);
 
@@ -154,6 +156,7 @@ iconoUsuario.addEventListener('mousemove', (e) => {
     btnNotificaciones.style.display = 'none';
     txtVerPerfil.style.display = 'block';
 });
+
 iconoUsuario.addEventListener('mouseleave', () => {
     txtUsuario.style.display = 'block';
     inputEstado.style.display = 'block';
@@ -162,37 +165,47 @@ iconoUsuario.addEventListener('mouseleave', () => {
 });
 
 
-
 //funciones de los controles
 
-function cambiarEstado() {
-    let estado = parseInt(document.querySelector('#estado').getAttribute('data-status'));
-    estado++;
+function cambiarEstado(direccion = 1) {
+    const estadoElem = document.getElementById('estado');
+    const estadoCuadro = document.querySelector('.estado-cuadro');
+    let estado = parseInt(estadoElem.getAttribute('data-status'));
+    estado += direccion;
     if (estado > 4) estado = 1;
-    document.querySelector('#estado').setAttribute('data-status', estado);
-    document.querySelector('#estado').classList.remove('en-linea', 'ausente', 'en-cola', 'partida-casual');
+    if (estado < 1) estado = 4;
+    estadoElem.setAttribute('data-status', estado);
+
+    // Limpia clases previas
+    estadoElem.classList.remove('en-linea', 'ausente', 'en-cola', 'partida-casual');
+    estadoCuadro.classList.remove('en-linea', 'ausente', 'en-cola', 'partida-casual');
+
+    let texto = '';
+    let clase = '';
     switch (estado) {
         case 1:
-            document.querySelector('#estado').classList.add('en-linea');
-            document.querySelector('#estado').innerHTML = '<i></i>En Línea';
-            Usuario.estado = 'En Línea';
+            texto = 'En Línea';
+            clase = 'en-linea';
             break;
         case 2:
-            document.querySelector('#estado').classList.add('ausente');
-            document.querySelector('#estado').innerHTML = '<i></i>Ausente';
-            Usuario.estado = 'Ausente';
+            texto = 'Ausente';
+            clase = 'ausente';
             break;
         case 3:
-            document.querySelector('#estado').classList.add('en-cola');
-            document.querySelector('#estado').innerHTML = '<i></i>Mirandose la Cola';
-            Usuario.estado = 'Mirandose la Cola';
+            texto = 'En Cola';
+            clase = 'en-cola';
             break;
         case 4:
-            document.querySelector('#estado').classList.add('partida-casual');
-            document.querySelector('#estado').innerHTML = '<i></i>1/5 Partida Clasificatoria';
-            Usuario.estado = '1/5 Partida Clasificatoria';
+            texto = '1/5 Partida Casual';
+            clase = 'partida-casual';
             break;
     }
+
+    // Actualiza ambos estados
+    estadoElem.classList.add(clase);
+    estadoElem.innerHTML = `<i></i>${texto}`;
+    estadoCuadro.classList.add(clase);
+    estadoCuadro.innerHTML = `<i></i>${texto}`;
 };
 
 function cambiarActive() {
@@ -222,9 +235,10 @@ function generarNumeroAleatorio() {
 function cambiarUsuario() {
     const nuevoUsuario = document.getElementById('nuevoUsuario').value;
     if (nuevoUsuario.trim() !== '') {
-        document.querySelector('.usuario').textContent = nuevoUsuario;
-        document.getElementById('nuevoUsuario').value = ''; // Limpiar el campo de entrada
         Usuario.nombre = nuevoUsuario;
+        document.querySelector('.usuario').textContent = Usuario.nombre;
+        document.querySelector('.usuario-cuadro').textContent = Usuario.nombre;
+        document.getElementById('nuevoUsuario').value = ''; // Limpiar el campo de entrada
     }
 };
 

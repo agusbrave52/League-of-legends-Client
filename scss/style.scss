@@ -12,364 +12,461 @@ $border-icon: rgb(124, 95, 0);
 body {
   margin: 0;
   padding: 0;
-  background-image: url('../assets/fondo.gif');
-  background-size: cover;
+
 }
 
-nav {
-  background: $bg-trans;
-  padding: 0%;
-  display: inline-flex;
-  width: 100%;
-  border-top: 2px solid $color-borde;
-  align-items: center;
-  box-sizing: border-box;
-  backdrop-filter: blur(20px);
-  height: 100px;
+#video-fondo {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; 
+  pointer-events: none; 
+}
 
-  .nav-main {
-    display: flex;
-    justify-content: space-between;
+.container {
+  width: calc(100% - 350px);
+  height: 100vh;
+  /* background-image: url('../assets/fondo.gif'); */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  nav {
+    background: $bg-trans;
+    padding: 0;
+    display: inline-flex;
+    width: 100%;
+    border-top: 2px solid $color-borde;
     align-items: center;
-    width: calc(100% - 350px);
-    height: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(20px);
+    height: 100px;
+
+    .nav-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 24px; // Espacio entre los dos bloques de la izquierda
+      padding-left: 20px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      right: 0;
+    }
+
+    //--------------------- SEPARADORES --------------------
+    .separador-fino {
+      width: 2px;
+      height: 100%;
+      background: radial-gradient(ellipse at center,
+          rgba($light-text, 1) 10%,
+          rgba($light-text, 0.0) 60%);
+    }
+
+    .separador-grueso {
+      width: 4px;
+      height: 100%;
+      background: radial-gradient(ellipse at center,
+          rgba($light-text, 1) 10%,
+          rgba($light-text, 0.0) 50%);
+    }
+
+    // -------------------- BOTONES DE NAVEGACIÓN --------------------
+    .barra-nav,
+    .barra-nav-select {
+      position: relative;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: $font-main;
+      color: $light-text;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px 0 16px;
+      overflow: hidden;
+      cursor: pointer;
+      letter-spacing: 1.5px;
+      transition: background 0.4s, color 0.4s;
+    }
+    
+    .container-pts{
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px;
+    }
+
+    .riot-pts{
+      display: flex;
+      flex-direction: row;
+      font-size: 15px;
+      color: $light-text;
+      background-color: $dark-bg;
+      width: 100px;
+      height: 25px;
+      border-radius: 15px;
+      border: 1px solid $color-borde;
+      align-items: center;
+      font-family: $font-main;
+      justify-content: left;
+      padding: 2px 0 2px 8px;
+
+      #riot-pts-cant{
+        font-weight: bold;
+        margin-left: 5px;
+      }
+      .btn-pts{
+          display: flex;
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          background-color: rgb(38, 38, 46);
+          color: $light-text;
+          border: 1px solid $color-borde;
+          border-radius: 50%;
+          width: 20px;
+          right: 16%;
+        }
+    }
+    .esencia-azul{
+      display: flex;
+      flex-direction: row;
+      font-size: 15px;
+      color: $light-text;
+      width: 100px;
+      height: 25px;
+      align-items: center;
+      font-family: $font-main;
+      justify-content: left;
+      padding: 2px 0 2px 8px;
+      margin-top: 5px;
+
+      #esencia-azul-cant{
+        font-weight: bold;
+        margin-left: 5px;
+      }
+    }
+
+    #barra-access {
+      background: linear-gradient(rgba(255, 211, 14, 0.5) 20%, rgb(255, 225, 91));
+      border-radius: 50%;
+      height: 40px;
+      width: 10px;
+      margin: 20px;
+    }
+
+    // Funcionalidad y efectos específicos para barra-nav-select
+    .barra-nav-select {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--mouse-x, 50%);
+        transform: translateX(-50%);
+        width: 45px;
+        height: 35px;
+        pointer-events: none;
+        background: radial-gradient(ellipse at center bottom,
+            rgba($light-text, 0.95) 0%,
+            rgba($light-text, 0.4) 40%,
+            rgba($light-text, 0.0) 100%);
+        opacity: 0;
+        transition: opacity 0.4s;
+        z-index: 2;
+        border-radius: 100px 100px 3px 3px / 120px 120px 100px 100px;
+        filter: blur(5px);
+        top: 70px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba($bg-trans, 0) 50%, $light-text 170%);
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+
+    // Funcionalidad y efectos específicos para barra-nav
+    .barra-nav {
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+
+    .selected {
+      color: $hover-text;
+      background: linear-gradient(rgba($bg-trans, 0) 50%, $light-text 170%);
+    }
+
+    .flechita {
+      width: 25px;
+      height: 25px;
+      clip-path: polygon(0% 0%, 35% 0, 50% 20%, 65% 0, 100% 0%, 50% 60%);
+      background: linear-gradient($color-borde 20%, lighten($color-borde, 50%) 90%);
+      position: absolute;
+      top: 0;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $dark-bg;
+        z-index: 3;
+        clip-path: polygon(10% 0, 25% 0, 50% 30%, 75% 0, 90% 0, 50% 50%);
+        pointer-events: none;
+      }
+    }
+
+    .lista-nav {
+      display: flex;
+      height: 100px;
+      align-items: center;
+      justify-content: start;
+    }
+
+    //------------------------- BOTON LEGENDS OF RUNATERRA -----------------------------
+
+    #lor {
+
+      letter-spacing: 1.5px;
+      background: linear-gradient($light-text, 50%, $color-borde 100%);
+      height: 35%;
+      width: 20%;
+      padding: 0 3% 0 3%;
+      border-radius: 30px;
+      z-index: 2;
+      margin-left: 8%;
+
+      svg {
+        width: 75px;
+        height: 75px;
+      }
+
+      &::before {
+        content: "";
+        inset: 1px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        position: absolute;
+        background: linear-gradient($color-borde 40%, darken($color-borde, 10%) 120%);
+        z-index: -1;
+        border-radius: 30px;
+      }
+    }
+
+    #arrow-right {
+      margin-left: 3px;
+      rotate: 315deg;
+      color: white;
+    }
+
+
+    // -------------------- BOTÓN INFO --------------------
+    .inf-system {
+      position: relative;
+      border: 6px double $dark-bg;
+      border-radius: 50%;
+      width: 40px;
+      height: 35px;
+      margin-left: 2%;
+      background-color: darken($primary-color, 15%);
+      font-size: large;
+      font-weight: 800;
+      font-family: $font-main;
+      color: aliceblue;
+      cursor: pointer;
+      z-index: 1;
+
+      &:hover {
+        box-shadow: inset 0 2px 8px #b6f0ff;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(180deg, rgba(8, 16, 29, 0) 35%, $dark-bg 120%);
+        width: 150%;
+        height: 150%;
+        z-index: 2;
+        top: -25%;
+        left: -25%;
+        border-radius: 50%;
+      }
+    }
+
   }
 
-  .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 24px; // Espacio entre los dos bloques de la izquierda
-    padding-left: 20px;
+  .nav2 {
+    background-color: $dark-bg;
   }
 
-  .nav-right {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  // -------------------- LOGO ------------------------------------------
+
+  #logo {
+    position: absolute;
+    z-index: 2;
+    top: -4.5px;
+    left: -19.5%;
+    width: 51px;
+    filter: contrast(1.1)
   }
 
 
-  // -------------------- BOTONES DE NAVEGACIÓN --------------------
-  .barra-nav,
-  .barra-nav-select {
-    position: relative;
+
+
+
+
+
+  // -------------------- BOTÓN JUGAR --------------------
+  .play-button {
+    background-color: #343c42;
+    color: #ffffff;
+    padding: 8px 45px;
+    cursor: pointer;
     font-size: 18px;
     font-weight: 700;
     font-family: $font-main;
-    color: $light-text;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 16px 0 16px;
-    overflow: hidden;
-    cursor: pointer;
-    letter-spacing: 1.5px;
-    transition: background 0.4s, color 0.4s;
+    border: none;
+    clip-path: polygon(0% 20%, 0 0, 84% 0%, 98% 50%, 84% 100%, 0 100%, 0% 80%);
   }
 
-  .barra-nav {
-    padding-left: 2%;
-  }
-
-  // Funcionalidad y efectos específicos para barra-nav-select
-  .barra-nav-select {
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: var(--mouse-x, 50%);
-      transform: translateX(-50%);
-      width: 45px;
-      height: 35px;
-      pointer-events: none;
-      background: radial-gradient(ellipse at center bottom,
-          rgba($light-text, 0.95) 0%,
-          rgba($light-text, 0.4) 40%,
-          rgba($light-text, 0.0) 100%);
-      opacity: 0;
-      transition: opacity 0.4s;
-      z-index: 2;
-      border-radius: 100px 100px 3px 3px / 120px 120px 100px 100px;
-      filter: blur(5px);
-      top: 70px;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(rgba($bg-trans, 0) 50%, $light-text 170%);
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-
-    &:hover::after {
-      opacity: 1;
-    }
-
-    &:hover::before {
-      opacity: 1;
-    }
-  }
-
-  // Funcionalidad y efectos específicos para barra-nav
-  .barra-nav {
-    &:hover::before {
-      opacity: 1;
-    }
-  }
-
-  .selected {
-    color: $hover-text;
-    background: linear-gradient(rgba($bg-trans, 0) 50%, $light-text 170%);
-  }
-
-  .flechita {
-    width: 25px;
-    height: 25px;
-    clip-path: polygon(0% 0%, 35% 0, 50% 20%, 65% 0, 100% 0%, 50% 60%);
-    background: linear-gradient($color-borde 20%, lighten($color-borde, 50%) 90%);
-    position: absolute;
-    top: 0;
-    z-index: 1;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: $dark-bg;
-      z-index: 3;
-      clip-path: polygon(10% 0, 25% 0, 50% 30%, 75% 0, 90% 0, 50% 50%);
-      pointer-events: none;
-    }
-  }
-
-  .lista-nav {
-    display: flex;
-    height: 100px;
-    align-items: center;
-    justify-content: start;
-  }
-
-  //------------------------- BOTON LEGENDS OF RUNATERRA -----------------------------
-
-  #lor {
-
-    letter-spacing: 1.5px;
-    background: linear-gradient($light-text, 50%, $color-borde 100%);
-    height: 35%;
-    width: 20%;
-    padding: 0 3% 0 3%;
-    border-radius: 30px;
-    z-index: 2;
-    margin-left: 8%;
-
-    svg {
-      width: 75px;
-      height: 75px;
-    }
-
-    &::before {
-      content: "";
-      inset: 1px;
-      width: calc(100% - 2px);
-      height: calc(100% - 2px);
-      position: absolute;
-      background: linear-gradient($color-borde 40%, darken($color-borde, 10%) 120%);
-      z-index: -1;
-      border-radius: 30px;
-    }
-  }
-
-  #arrow-right {
-    margin-left: 3px;
-    rotate: 315deg;
-    color: white;
-  }
-
-
-  // -------------------- BOTÓN INFO --------------------
-  .inf-system {
+  .dentro {
     position: relative;
-    border: 6px double $dark-bg;
-    border-radius: 50%;
-    width: 40px;
-    height: 35px;
-    margin-left: 2%;
-    background-color: darken($primary-color, 15%);
-    font-size: large;
-    font-weight: 800;
-    font-family: $font-main;
-    color: aliceblue;
-    cursor: pointer;
-    z-index: 1;
-
-    &:hover {
-      box-shadow: inset 0 2px 8px #b6f0ff;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      background: linear-gradient(180deg, rgba(8, 16, 29, 0) 35%, $dark-bg 120%);
-      width: 150%;
-      height: 150%;
-      z-index: 2;
-      top: -25%;
-      left: -25%;
-      border-radius: 50%;
-    }
-  }
-
-}
-
-.nav2 {
-  background-color: $dark-bg;
-}
-
-// -------------------- LOGO ------------------------------------------
-
-#logo {
-  position: absolute;
-  z-index: 2;
-  top: -4.5px;
-  left: -19.5%;
-  width: 51px;
-  filter: contrast(1.1)
-}
-
-
-
-
-
-
-
-// -------------------- BOTÓN JUGAR --------------------
-.play-button {
-  background-color: #343c42;
-  color: #ffffff;
-  padding: 8px 45px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: $font-main;
-  border: none;
-  clip-path: polygon(0% 20%, 0 0, 84% 0%, 98% 50%, 84% 100%, 0 100%, 0% 80%);
-}
-
-.dentro {
-  position: relative;
-  background: linear-gradient(to bottom, $primary-color 20%, #0b90a1 50%, #0b8a9b);
-  clip-path: polygon(0% 20%, 0 0, 84% 0%, 100% 50%, 84% 100%, 0 100%, 0% 80%);
-  padding: 3px;
-  z-index: 2;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg,
-        rgba($primary-color, 0.2) 0%,
-        rgb(163, 250, 253) 50%,
-        rgba($primary-color, 0.2) 100%);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-    background-size: 200% 100%;
-    background-position: -100% 0;
-  }
-
-  &:hover::before {
-    opacity: 1;
-    animation: brillo-move 1.2s linear infinite;
-  }
-
-
-}
-
-@keyframes brillo-move {
-  0% {
-    background-position: -100% 0;
-  }
-
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-.bordes {
-  display: flex;
-  margin-left: 5%;
-  border: solid 1px #856f0cc5;
-  position: relative;
-  padding: 3px;
-  width: fit-content;
-  background-color: $dark-bg;
-  z-index: 1;
-
-  .borde-dificil {
-    position: absolute;
-    left: -7%;
-    top: 6%;
-    width: 25%;
-    height: 89%;
-    z-index: 1;
-    border-radius: 50%;
-    /* box-shadow: 3.5px 0px $primary-color; */
     background: linear-gradient(to bottom, $primary-color 20%, #0b90a1 50%, #0b8a9b);
-    clip-path: inset(0 -10% 0 30%);
+    clip-path: polygon(0% 20%, 0 0, 84% 0%, 100% 50%, 84% 100%, 0 100%, 0% 80%);
+    padding: 3px;
+    z-index: 2;
 
     &::before {
       content: "";
-      inset: 0;
-      top: 1.5px;
-      position: absolute;
-      width: calc(100% - 3px);
-      height: calc(100% - 3px);
-      background: $dark-bg;
-      border-radius: 50%;
-      z-index: -1;
-    }
-  }
-
-
-
-  .borde-dentro {
-    position: relative;
-    width: 100%;
-    z-index: 0;
-
-    &::after {
-      content: "";
       position: absolute;
       inset: 0;
-      border: 3px solid #155d66ce;
+      background: linear-gradient(90deg,
+          rgba($primary-color, 0.2) 0%,
+          rgb(163, 250, 253) 50%,
+          rgba($primary-color, 0.2) 100%);
+      opacity: 0;
       pointer-events: none;
       z-index: 0;
+      background-size: 200% 100%;
+      background-position: -100% 0;
     }
 
-    /* &:hover~.borde-dificil {
+    &:hover::before {
+      opacity: 1;
+      animation: brillo-move 1.2s linear infinite;
+    }
+
+
+  }
+
+  @keyframes brillo-move {
+    0% {
+      background-position: -100% 0;
+    }
+
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  .bordes {
+    display: flex;
+    margin-left: 5%;
+    border: solid 1px #856f0cc5;
+    position: relative;
+    padding: 3px;
+    width: fit-content;
+    background-color: $dark-bg;
+    z-index: 1;
+
+    .borde-dificil {
+      position: absolute;
+      left: -7%;
+      top: 6%;
+      width: 25%;
+      height: 89%;
+      z-index: 1;
+      border-radius: 50%;
+      /* box-shadow: 3.5px 0px $primary-color; */
+      background: linear-gradient(to bottom, $primary-color 20%, #0b90a1 50%, #0b8a9b);
+      clip-path: inset(0 -10% 0 30%);
+
+      &::before {
+        content: "";
+        inset: 0;
+        top: 1.5px;
+        position: absolute;
+        width: calc(100% - 3px);
+        height: calc(100% - 3px);
+        background: $dark-bg;
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+
+
+
+    .borde-dentro {
+      position: relative;
+      width: 100%;
+      z-index: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 3px solid #155d66ce;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* &:hover~.borde-dificil {
       
   } */
+    }
+
+
   }
 
+  @keyframes box-shadow {
+    0% {
+      box-shadow: 3.5px 0px #b7ebf1;
+    }
+
+    100% {
+      box-shadow: 3.5px 0px $primary-color;
+    }
+  }
 
 }
-
-@keyframes box-shadow {
-  0% {
-    box-shadow: 3.5px 0px #b7ebf1;
-  }
-
-  100% {
-    box-shadow: 3.5px 0px $primary-color;
-  }
-}
-
 
 // -------------------- PERFIL ----------------------
 .perfil {
@@ -466,6 +563,10 @@ nav {
         }
       }
     }
+
+    &:hover~.cuadro-info-Perfil {
+      display: flex;
+    }
   }
 
   //-------------------- Info del perfil --------------------
@@ -480,10 +581,12 @@ nav {
       font-size: larger;
       animation: aparecer-fade 0.6s forwards;
     }
+
     @keyframes aparecer-fade {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -505,76 +608,7 @@ nav {
       transition: opacity 0.15s;
     }
 
-    .en-linea {
-      color: rgb(0, 158, 13);
-      cursor: pointer;
-      animation: aparecer-fade 0.6s forwards;
 
-      & i {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background-color: rgb(0, 75, 6);
-        border-radius: 50%;
-        margin-right: 5px;
-        border: 2px solid rgb(0, 158, 13);
-        animation: aparecer-fade 0.6s forwards;
-      }
-
-    }
-
-    .ausente {
-      cursor: pointer;
-      animation: aparecer-fade 0.6s forwards;
-
-      & i {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background-color: rgb(100, 0, 0);
-        border-radius: 50%;
-        margin-right: 5px;
-        border: 2px solid rgb(197, 1, 1);
-        animation: aparecer-fade 0.6s forwards;
-      }
-
-    }
-
-    .en-cola {
-      color: $primary-color;
-      cursor: pointer;
-      animation: aparecer-fade 0.6s forwards;
-
-      & i {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background-color: rgb(0, 87, 94);
-        border-radius: 50%;
-        margin-right: 5px;
-        border: 2px solid rgb(0, 197, 211);
-        animation: aparecer-fade 0.6s forwards;
-      }
-
-    }
-
-    .partida-casual {
-      color: rgb(0, 158, 13);
-      cursor: pointer;
-      animation: aparecer-fade 0.6s forwards;
-
-      & i {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background-color: rgb(0, 75, 6);
-        border-radius: 50%;
-        margin-right: 5px;
-        border: 2px solid rgb(0, 158, 13);
-        animation: aparecer-fade 0.6s forwards;
-      }
-
-    }
 
     .cambiar-active {
       position: fixed;
@@ -629,11 +663,13 @@ nav {
       display: none;
       animation: aparecer-costado 1s forwards;
     }
+
     @keyframes aparecer-costado {
       from {
         opacity: 0;
         transform: translateX(-20px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -641,6 +677,7 @@ nav {
     }
   }
 
+  // -------------------- EXP y cambio de usuario --------------------
   .slider-exp {
     position: absolute;
     font-size: small;
@@ -720,8 +757,10 @@ nav {
     div {
       margin: 7px;
     }
+
   }
 
+  // -------------------- BOTÓN PERFIL --------------------
   .boton-perfil {
     position: absolute;
     width: fit-content;
@@ -732,8 +771,6 @@ nav {
     top: 2px;
     right: 30px;
     cursor: pointer;
-
-
   }
 
   #boton-perfil-info {
@@ -753,51 +790,112 @@ nav {
   }
 
   // --------------------- Cuadro de info del perfil --------------------
-  .cuadro-info-Perfil{
+  .cuadro-info-Perfil {
     position: absolute;
     display: none;
+    flex-direction: column;
     pointer-events: none;
     background: $dark-bg;
     color: #DDCB9F;
     border: 2px solid $color-borde;
-    padding: 10px 14px;
+    padding: 0px 0px 25px 0px;
     font-size: small;
     font-family: $font-main;
-    z-index: 1;
+    z-index: 5;
     box-shadow: 0 4px 16px #000a;
-    width: 400px;
+    width: 450px;
     height: 250px;
-    top: 50%;
+    top: 20%;
     right: 360px;
     background-position: 70% 0%;
     background-size: 170% 170%;
     filter: contrast(1.1) saturate(1.2);
+    animation: aparecer-fade 0.6s forwards;
 
     &::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba($dark-bg, 0) 0%,rgba(20, 20, 20,0.8) 40%, rgba(20, 20, 20,1) 60%, rgba(20, 20, 20, 1) 100%);
-      z-index: 2;
-    }
-    .espacio-cuadro{
-      width: 100%;
-      height: 30%;
-    }
-    .icon-user-cuadro-total{
+      background: linear-gradient(to bottom, rgba($dark-bg, 0) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(20, 20, 20, 1) 60%, rgba(20, 20, 20, 1) 100%);
+      z-index: 6;
     }
 
-    .icon-user-cuadro{
+    .container-cuadro {
       position: relative;
-      display: flex;
-      z-index: 3;
-      background-position: center;
-      background-size: cover;
-      width: 20%;
-      height: 30%;
+      display: inline-flex;
+      padding-top: 27%;
+      width: 100%;
+      z-index: 7;
+      color: #DDCB9F;
+
+
+      .icon-user-cuadro {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-position: center;
+        background-size: cover;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin-left: 35px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -3px;
+          width: 120%;
+          height: 120%;
+          background-image: url('../assets/borde1.png');
+          background-size: cover;
+          background-position: center;
+          filter: blur(0.5px);
+        }
+      }
+
+      .info-user-cuadro {
+        margin-left: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: medium;
+        font-weight: bold;
+        width: 60%;
+        height: 90px;
+
+        .usuario-cuadro {
+          font-size: x-large;
+          margin-bottom: 5px;
+        }
+
+        .rango-cuadro,
+        .desafios-cuadro {
+          font-size: small;
+          font-weight: normal;
+        }
+
+        .lema-cuadro {
+          color: #ddcb9f6b;
+        }
+      }
+    }
+
+    .estado-cuadro {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      font-size: small;
+      font-weight: bold;
+      z-index: 7;
     }
   }
 }
+
+
+
+
+
 
 #generarNumero {
   font-size: small;
@@ -817,22 +915,140 @@ nav {
 }
 
 
+// -------------------- Estados --------------------
+.en-linea {
+  color: rgb(0, 158, 13);
+  cursor: pointer;
+  animation: aparecer-fade 0.6s forwards;
 
+  & i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(0, 75, 6);
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 2px solid rgb(0, 158, 13);
+    animation: aparecer-fade 0.6s forwards;
+  }
 
-/* Main Aside  */
-
-main {
-  display: flex;
-  justify-content: flex-end;
 }
 
+.ausente {
+  cursor: pointer;
+  animation: aparecer-fade 0.6s forwards;
+
+  & i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(100, 0, 0);
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 2px solid rgb(197, 1, 1);
+    animation: aparecer-fade 0.6s forwards;
+  }
+
+}
+
+.en-cola {
+  color: $primary-color;
+  cursor: pointer;
+  animation: aparecer-fade 0.6s forwards;
+
+  & i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(0, 87, 94);
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 2px solid rgb(0, 197, 211);
+    animation: aparecer-fade 0.6s forwards;
+  }
+
+}
+
+.partida-casual {
+  color: rgb(0, 158, 13);
+  cursor: pointer;
+  animation: aparecer-fade 0.6s forwards;
+
+  & i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(0, 75, 6);
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 2px solid rgb(0, 158, 13);
+    animation: aparecer-fade 0.6s forwards;
+  }
+
+}
+
+// -------------------- Container perfil --------------------
+
+.container-perfil {
+  display: inline-flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: $bg-trans;
+  width: 350px;
+  border-top: 2px solid $color-borde;
+  align-items: center;
+  height: 100px;
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -------------------- ASIDE --------------------
+
 aside {
-  background-color: #08101D;
+  background: $dark-bg;
   margin: 0;
-  height: 100%;
+  height: calc(100vh - 100px);
   width: 350px;
   border-left: 1px solid #333;
-  ;
+  position: fixed;
+  right: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  // -------------------- SCROLLBAR ASIDE --------------------
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-borde;
+    border-radius: 30px;
+
+    &:hover {
+      background-color: lighten($color-borde, 20%);
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $dark-bg;
+  }
+  // -------------------- FIN SCROLLBAR ASIDE --------------------
 
   p {
     color: white;
@@ -847,7 +1063,6 @@ aside {
     width: 90%;
     height: 70px;
     margin: 1px;
-
   }
 
   .icon {
@@ -867,8 +1082,7 @@ aside {
   }
 
   .status {
-    margin-top: 10px;
-    color: rgb(5, 186, 192);
-    font-weight: normal;
+    flex-direction: row;
+    align-items: center;
   }
 }
