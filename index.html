@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <video id="video-fondo" autoplay loop muted playsinline>
-            <source src="./assets/fondo.mp4" type="video/mp4">
+            <source src="./assets/fondoLucian.mp4" type="video/mp4">
             Tu navegador no soporta video HTML5.
         </video>
         <header>
@@ -37,10 +37,10 @@
                                     !
                                 </button>
                             </div>
-                            <span class="barra-nav-select selected">
+                            <span class="barra-nav-select lol selected">
                                 <div class="flechita"></div>LOL
                             </span>
-                            <span class="barra-nav-select">TFT</span>
+                            <span class="barra-nav-select tft">TFT</span>
 
                             <!-- boton RUNATERRA -->
                             <div class="barra-nav" id="lor">
@@ -82,21 +82,21 @@
                         </div>
                     </div>
                     <div class="nav-right">
-                        <div class="barra-nav-select"><img class="iconos-nav" src="./assets/desafios.png"
+                        <div class="barra-nav-select desafios"><img class="iconos-nav" src="./assets/desafios.png"
                                 alt="desafios crepusculares" width="30px"></div>
                         <div class="separador-fino"></div>
 
-                        <div class="barra-nav-select"><img class="iconos-nav" src="./assets/clash.png" alt="clash"
+                        <div class="barra-nav-select clash"><img class="iconos-nav" src="./assets/clash.png" alt="clash"
                                 width="30px"></div>
                         <div class="separador-grueso"></div>
 
-                        <div class="barra-nav-select"><img class="iconos-nav" src="./assets/coleccion.png"
+                        <div class="barra-nav-select coleccion"><img class="iconos-nav" src="./assets/coleccion.png"
                                 alt="coleccion" width="30px"></div>
-                        <div class="barra-nav-select"><img class="iconos-nav" src="./assets/botin.png" alt="botin"
+                        <div class="barra-nav-select botin"><img class="iconos-nav" src="./assets/botin.png" alt="botin"
                                 width="30px"></div>
                         <div class="separador-fino"></div>
 
-                        <div class="barra-nav-select"><img class="iconos-nav" src="./assets/tienda.png" alt="tienda"
+                        <div class="barra-nav-select tienda"><img class="iconos-nav" src="./assets/tienda.png" alt="tienda"
                                 width="30px"></div>
                         <div class="separador-grueso"></div>
 
@@ -106,19 +106,22 @@
                         <div class="barra-nav container-pts">
                             <div class="riot-pts">
                                 <img src="./assets/riot points.png" alt="" width="18px">
-                                <span id="riot-pts-cant">18 </span><button class="btn-pts">+</button>
+                                <span id="riot-pts-cant"></span><button class="btn-pts">+</button>
+                                
                             </div>
                             <div class="esencia-azul">
                                 <img src="./assets/esencia azul.png" alt="" width="15px">
-                                <span id="esencia-azul-cant">6400</span>
+                                <span id="esencia-azul-cant"></span>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
             </nav>
-            <hr style="padding: 0; margin: 0; border: none; border-top: 1px solid #575757d3; z-index: 7; position: relative;">
+            <hr style="padding: 0; margin: 0; border: none; border-top: 1px solid #575757d3; z-index: 2; position: relative;">
         </header>
+        <i id="infoTooltip" class="infos"></i>
     </div>
 
 
@@ -126,20 +129,20 @@
 
 
     <div class="container-perfil">
+        <i id="info-mouse"></i>
         <div class="perfil">
             <div class="slider-exp">
-                <p id="cantidad-experiencia">Cantidad experiencia</p>
+                <button id="cerrarSlider">x</button>
+                
                 <div><input type="range" min="0" max="100" value="50" class="slider" id="expRange"
                         oninput="actualizarExp(this.value)"></div>
-                <p id="numero-aleatorio">Numero aleatorio </p>
                 <div><button id="generarNumero" onclick="generarNumeroAleatorio()">Ν</button></div>
-                <p id="cambiar-usuario">Cambiar Usuario: </p>
                 <div><input type="text" id="nuevoUsuario" placeholder="Usuario"><button onclick="cambiarUsuario()"
                         id="nuevoUsuarioBTN">Cambiar</button></div>
             </div>
 
             <div class="boton-perfil" onclick="abrirDeslizador()">👓</div>
-            <p id="boton-perfil-info">Activar Modo <br> Desarrollador</p>
+            <!-- icono de perfil con experiencia -->
             <div class="experiencia">
                 <div class="icon-user">
                     <div class="lvl" data-lvl="30">
@@ -149,12 +152,13 @@
 
             <div class="info-perfil">
                 <div class="usuario">Usuario</div>
-                <div class="en-linea" id="estado" data-status="1" onclick="cambiarEstado()"><i></i>En Línea
+                <div class="en-linea" id="estado" data-status="1"><i onclick="cambiarEstado()" class="estadoIcon"></i><span class="estadoTexto" onclick="toggleEstado()">En Línea</span>
                 </div>
-                <div class="cambiar-estado">Cambiar estado</div>
                 <div class="notificaciones fa fa-bell" onclick="cambiarActive()"></div>
-                <div class="cambiar-active">Cambiar Active</div>
                 <div class="ver-perfil"><i class="fas fa-user"></i> Ver Perfil</div>
+                
+
+                </input>
             </div>
 
             <div class="cuadro-info-Perfil">
@@ -176,7 +180,9 @@
                 <div class="estado-cuadro en-linea"><i></i>En Linea</div>
             </div>
         </div>
+        <input type="text" class="cambiar-estado" placeholder="Mensaje de estado personalizado">
     </div>
+    
     <aside>
 
         <section class="section-aside">
