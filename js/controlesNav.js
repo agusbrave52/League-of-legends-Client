@@ -126,7 +126,7 @@ function actualizarPerfil(usuario) {
   } else {
     esenciaAzul.textContent = Usuario.escencia;
   }
-}
+};
 
 function inicializarNavSelect() {
   const navItems = document.querySelectorAll(".barra-nav-select");
@@ -159,7 +159,7 @@ function inicializarNavSelect() {
   document.querySelector('.lol').addEventListener('click', function () {
     document.getElementById('video-fondo').src = './assets/fondoLucian.mp4';
   });
-}
+};
 
 function iniciarInfos() {
   const esenciaAzul = document.querySelector('.esencia-azul');
@@ -272,7 +272,7 @@ function iniciarInfos() {
   lor.addEventListener('mouseleave', () => {
     infoTooltip.style.display = 'none';
   });
-}
+};
 
 function IniciarInfoConMouse() {
   // Elementos del DOM para controles
@@ -388,7 +388,7 @@ function IniciarInfoConMouse() {
   estado.addEventListener('mouseleave', () => {
     infoTooltip.style.display = 'none';
   });
-}
+};
 
 function togglePerfil() {
   const txtUsuario = document.querySelector('.usuario');
@@ -410,7 +410,7 @@ function togglePerfil() {
     btnNotificaciones.style.display = 'block';
     txtVerPerfil.style.display = 'none';
   });
-}
+};
 
 function toggleEstado() {
   const estado = document.querySelector('.estadoTexto');
@@ -442,4 +442,4 @@ function toggleEstado() {
       inputEstado.style.display = 'none';
     }
   });
-}
+};
