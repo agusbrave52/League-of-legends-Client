@@ -1,4 +1,6 @@
 // 🎨 Variables
+@use "sass:color";
+
 $primary-color: #3fe3f8;
 $dark-bg: #08101D;
 $bg-trans: rgba($dark-bg, 0.4);
@@ -7,29 +9,29 @@ $light-text: #fff1b4;
 $hover-text: #fffbe8;
 $font-main: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 $border-icon: rgb(124, 95, 0);
+$color-fondo-infos: rgb(33, 33, 33);
 
 // -------------------- NAV --------------------
 body {
   margin: 0;
   padding: 0;
-
+  background-color: $dark-bg;
 }
 
 #video-fondo {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0; 
-  pointer-events: none; 
+  z-index: 0;
+  pointer-events: none;
 }
 
 .container {
   width: calc(100% - 350px);
   height: 100vh;
-  /* background-image: url('../assets/fondo.gif'); */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -44,6 +46,7 @@ body {
     box-sizing: border-box;
     backdrop-filter: blur(20px);
     height: 100px;
+    z-index: 2;
 
     .nav-main {
       display: flex;
@@ -87,6 +90,7 @@ body {
     // -------------------- BOTONES DE NAVEGACIÓN --------------------
     .barra-nav,
     .barra-nav-select {
+      user-select: none;
       position: relative;
       font-size: 18px;
       font-weight: 700;
@@ -102,14 +106,19 @@ body {
       letter-spacing: 1.5px;
       transition: background 0.4s, color 0.4s;
     }
-    
-    .container-pts{
+
+    .barra-nav {
+      overflow: visible;
+    }
+
+    .container-pts {
       display: flex;
       flex-direction: column;
       margin-right: 20px;
+      user-select: none;
     }
 
-    .riot-pts{
+    .riot-pts {
       display: flex;
       flex-direction: row;
       font-size: 15px;
@@ -123,25 +132,29 @@ body {
       font-family: $font-main;
       justify-content: left;
       padding: 2px 0 2px 8px;
+      cursor: default;
 
-      #riot-pts-cant{
+      #riot-pts-cant {
         font-weight: bold;
         margin-left: 5px;
       }
-      .btn-pts{
-          display: flex;
-          position: absolute;
-          align-items: center;
-          justify-content: center;
-          background-color: rgb(38, 38, 46);
-          color: $light-text;
-          border: 1px solid $color-borde;
-          border-radius: 50%;
-          width: 20px;
-          right: 16%;
-        }
+
+      .btn-pts {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-fondo-infos;
+        color: $light-text;
+        border: 1px solid $color-borde;
+        border-radius: 50%;
+        width: 20px;
+        right: 16%;
+        cursor: pointer;
+      }
     }
-    .esencia-azul{
+
+    .esencia-azul {
       display: flex;
       flex-direction: row;
       font-size: 15px;
@@ -153,8 +166,9 @@ body {
       justify-content: left;
       padding: 2px 0 2px 8px;
       margin-top: 5px;
+      cursor: default;
 
-      #esencia-azul-cant{
+      #esencia-azul-cant {
         font-weight: bold;
         margin-left: 5px;
       }
@@ -225,7 +239,7 @@ body {
       width: 25px;
       height: 25px;
       clip-path: polygon(0% 0%, 35% 0, 50% 20%, 65% 0, 100% 0%, 50% 60%);
-      background: linear-gradient($color-borde 20%, lighten($color-borde, 50%) 90%);
+      background: linear-gradient($color-borde 20%, color.adjust($color-borde, $lightness: 50%) 90%);
       position: absolute;
       top: 0;
       z-index: 1;
@@ -254,7 +268,6 @@ body {
     //------------------------- BOTON LEGENDS OF RUNATERRA -----------------------------
 
     #lor {
-
       letter-spacing: 1.5px;
       background: linear-gradient($light-text, 50%, $color-borde 100%);
       height: 35%;
@@ -275,7 +288,7 @@ body {
         width: calc(100% - 2px);
         height: calc(100% - 2px);
         position: absolute;
-        background: linear-gradient($color-borde 40%, darken($color-borde, 10%) 120%);
+        background: linear-gradient($color-borde 40%, color.adjust($color-borde, $lightness: -10%) 120%);
         z-index: -1;
         border-radius: 30px;
       }
@@ -296,7 +309,7 @@ body {
       width: 40px;
       height: 35px;
       margin-left: 2%;
-      background-color: darken($primary-color, 15%);
+      background-color: color.adjust($primary-color, $lightness: -15%);
       font-size: large;
       font-weight: 800;
       font-family: $font-main;
@@ -491,8 +504,8 @@ body {
     align-items: center;
     justify-content: center;
     background: conic-gradient(from 180deg,
-        darken($primary-color, 15%) calc(var(--percent) * 1%),
-        lighten($dark-bg, 20%) calc(var(--percent) * 1%));
+        color.adjust($primary-color, $lightness: -15%) calc(var(--percent) * 1%),
+        color.adjust($dark-bg, $lightness: 20%) calc(var(--percent) * 1%));
 
     &:hover::after {
       content: "";
@@ -501,7 +514,7 @@ body {
       height: 100%;
       border-radius: 50%;
       background-color: transparent;
-      border: lighten($border-icon, 10%) 3px solid;
+      border: color.adjust($border-icon, $lightness: 10%) 3px solid;
     }
 
     &:hover>.icon-user::after {
@@ -511,11 +524,11 @@ body {
       height: 100%;
       border-radius: 50%;
       background-color: transparent;
-      border: lighten($border-icon, 10%) 3px solid;
+      border: color.adjust($border-icon, $lightness: 10%) 3px solid;
     }
 
     &:hover>.icon-user>.lvl {
-      background: linear-gradient(to top, lighten($border-icon, 10%) 50%, lighten($border-icon, 30%) 100%);
+      background: linear-gradient(to top, color.adjust($border-icon, $lightness: 10%) 50%, color.adjust($border-icon, $lightness: 30%) 100%);
     }
 
     .icon-user {
@@ -541,7 +554,7 @@ body {
         width: 70%;
         height: 40%;
         z-index: 2;
-        background: linear-gradient(to top, $border-icon 50%, lighten($border-icon, 20%) 100%);
+        background: linear-gradient(to top, $border-icon 50%, color.adjust($border-icon, $lightness: 20%) 100%);
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 
         &::before {
@@ -576,10 +589,14 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #DDCB9F;
 
+    
+
     .usuario {
       font-weight: bold;
       font-size: larger;
       animation: aparecer-fade 0.6s forwards;
+      cursor: default;
+      user-select: none;
     }
 
     @keyframes aparecer-fade {
@@ -679,6 +696,7 @@ body {
 
   // -------------------- EXP y cambio de usuario --------------------
   .slider-exp {
+    user-select: none;
     position: absolute;
     font-size: small;
     color: #DDCB9F;
@@ -693,6 +711,21 @@ body {
     padding-top: 0;
     top: 90px;
 
+    #cerrarSlider {
+      position: absolute;
+      top: 2px;
+      right: 5px;
+      background: transparent;
+      border: none;
+      color: $color-borde;
+      font-size: medium;
+      cursor: pointer;
+
+      &:hover {
+        color: color.adjust($color-borde, $lightness: 20%);
+      }
+    }
+
     #expRange {
       width: 120px;
       accent-color: $primary-color;
@@ -700,7 +733,7 @@ body {
       &::-webkit-slider-runnable-track {
         height: 10px;
         border-radius: 30px;
-        background: linear-gradient(to left, $primary-color 0%, lighten($dark-bg, 10%) 100%);
+        background: linear-gradient(to left, $primary-color 0%, color.adjust($dark-bg, $lightness: 10%) 100%);
         border: none;
         cursor: pointer;
       }
@@ -715,7 +748,7 @@ body {
       border-radius: 5px;
       border: 1px solid $color-borde;
       padding: 2px;
-      background-color: darken($dark-bg, 10%);
+      background-color: color.adjust($dark-bg, $lightness: -10%);
       color: #DDCB9F;
     }
 
@@ -731,28 +764,12 @@ body {
       font-weight: bold;
 
       &:hover {
-        background: lighten($primary-color, 10%);
+        background: color.adjust($primary-color, $lightness: 10%);
         border: 2px solid $color-borde;
       }
     }
 
-    #cantidad-experiencia,
-    #numero-aleatorio,
-    #cambiar-usuario {
-      position: fixed;
-      display: none;
-      pointer-events: none;
-      background: #181818cc;
-      color: #fffbe8;
-      border: 2px solid $color-borde;
-      border-radius: 8px;
-      padding: 6px 14px;
-      font-size: 1rem;
-      font-family: $font-main;
-      z-index: 3;
-      box-shadow: 0 4px 16px #000a;
-      transition: opacity 0.15s;
-    }
+
 
     div {
       margin: 7px;
@@ -771,6 +788,7 @@ body {
     top: 2px;
     right: 30px;
     cursor: pointer;
+    user-select: none;
   }
 
   #boton-perfil-info {
@@ -909,7 +927,7 @@ body {
   font-weight: bold;
 
   &:hover {
-    background: lighten($primary-color, 10%);
+    background: color.adjust($primary-color, $lightness: 10%);
     border: 2px solid $color-borde;
   }
 }
@@ -920,6 +938,7 @@ body {
   color: rgb(0, 158, 13);
   cursor: pointer;
   animation: aparecer-fade 0.6s forwards;
+  user-select: none;
 
   & i {
     display: inline-block;
@@ -937,6 +956,7 @@ body {
 .ausente {
   cursor: pointer;
   animation: aparecer-fade 0.6s forwards;
+  user-select: none;
 
   & i {
     display: inline-block;
@@ -955,6 +975,7 @@ body {
   color: $primary-color;
   cursor: pointer;
   animation: aparecer-fade 0.6s forwards;
+  user-select: none;
 
   & i {
     display: inline-block;
@@ -973,6 +994,7 @@ body {
   color: rgb(0, 158, 13);
   cursor: pointer;
   animation: aparecer-fade 0.6s forwards;
+  user-select: none;
 
   & i {
     display: inline-block;
@@ -1003,6 +1025,50 @@ body {
 }
 
 
+// -------------------- INFOS --------------------
+.infos {
+  position: fixed;
+  display: none;
+  background: $color-fondo-infos;
+  width: fit-content;
+  height: fit-content;
+  z-index: 999;
+  padding: 10px;
+  border: 1px solid $color-borde;
+  color: $light-text;
+  font-family: $font-main;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+#info-mouse {
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  background: #181818cc;
+  color: #fffbe8;
+  border: 2px solid $color-borde;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  font-family: $font-main;
+  font-style: normal;
+  z-index: 999;
+  box-shadow: 0 4px 16px #000a;
+  transition: opacity 0.15s;
+}
+.cambiar-estado {
+      position: fixed;
+      display: none;
+      background: $color-fondo-infos;
+      z-index: 999;
+      padding: 10px;
+      border: 1px solid $color-borde;
+      color: $light-text;
+      font-family: $font-main;
+      font-size: 1rem;
+      cursor: text;
+    }
 
 
 
@@ -1042,12 +1108,14 @@ aside {
     border-radius: 30px;
 
     &:hover {
-      background-color: lighten($color-borde, 20%);
+      background-color: color.adjust($color-borde, $lightness: 20%);
     }
   }
+
   &::-webkit-scrollbar-track {
     background-color: $dark-bg;
   }
+
   // -------------------- FIN SCROLLBAR ASIDE --------------------
 
   p {
