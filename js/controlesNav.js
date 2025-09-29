@@ -1,6 +1,6 @@
 let Usuario = {
   nombre: 'Usuario',
-  estado: 'En Línea',
+  estado: 'En linea',
   nivel: 200,
   experiencia: 40,
   lema: '#URU',
@@ -11,7 +11,220 @@ let Usuario = {
   icono: './assets/icon-user1.png',
   rp: 2600,
   escencia: 83635
-}
+};
+
+let grupoUsuarios = [
+  {
+    nombre: 'Tilinoso',
+    estado: 'En linea',
+    nivel: 150,
+    experiencia: 30,
+    lema: '#URU1',
+    titulo: 'Guerrero',
+    rango: 'Plata II',
+    desafios: 'Oro',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user1.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'Urito',
+    estado: 'Ausente',
+    nivel: 100,
+    experiencia: 20,
+    lema: '#URU2',
+    titulo: 'Mago',
+    rango: 'Bronce III',
+    desafios: 'Plata',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user2.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'Valmanway',
+    estado: 'En Cola',
+    nivel: 120,
+    experiencia: 25,
+    lema: '#URU3',
+    titulo: 'Asesino',
+    rango: 'Oro III',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user3.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'Uranaibaba11',
+    estado: 'Partida Casual',
+    nivel: 110,
+    experiencia: 15,
+    lema: '#URU4',
+    titulo: 'Soporte',
+    rango: 'Plata I',
+    desafios: 'Oro',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user4.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'MorganFreeman',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user5.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'MaximoCocceti',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user6.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'ElGatoBlack',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user7.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'Pinguito',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user8.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'Benito',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user9.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'Tocamelo',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user10.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'exkabio',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user11.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'frolita',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user12.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'dashana',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user13.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'APD Darky',
+    estado: 'En Cola',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user14.png',
+    rp: 2600,
+    escencia: 83635
+  },
+  {
+    nombre: 'Ash Nazg1',
+    estado: 'En linea',
+    nivel: 200,
+    experiencia: 40,
+    lema: '#URU',
+    titulo: 'Ladron',
+    rango: 'Oro I',
+    desafios: 'Platino',
+    skinFavorita: './assets/pj/LucianForajido.jpg',
+    icono: './assets/icon-user15.png',
+    rp: 2600,
+    escencia: 83635
+  }
+];
 
 
 
@@ -23,6 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
   IniciarInfoConMouse();
   togglePerfil();
   toggleEstado();
+  actualizarUsuariosAside();
 });
 
 
@@ -45,7 +259,7 @@ function cambiarEstado(direccion = 1) {
   let clase = '';
   switch (estado) {
     case 1:
-      texto = 'En Línea';
+      texto = 'En línea';
       clase = 'en-linea';
       break;
     case 2:
@@ -53,7 +267,7 @@ function cambiarEstado(direccion = 1) {
       clase = 'ausente';
       break;
     case 3:
-      texto = 'En Cola';
+      texto = 'Mirandose la cola';
       clase = 'en-cola';
       break;
     case 4:
@@ -171,6 +385,10 @@ function iniciarInfos() {
   const clash = document.querySelector('.clash');
   const desafios = document.querySelector('.desafios');
   const lor = document.querySelector('#lor');
+  const add_friend = document.querySelector('.addFriend');
+  const folder_icon = document.querySelector('.fa-folder-plus');
+  const options_icon = document.querySelector('.fa-list');
+  const filtro_icon = document.querySelector('.fa-search');
 
   const infoTooltip = document.getElementById('infoTooltip');
 
@@ -270,6 +488,50 @@ function iniciarInfos() {
   });
 
   lor.addEventListener('mouseleave', () => {
+    infoTooltip.style.display = 'none';
+  });
+
+  add_friend.addEventListener('mousemove', (e) => {
+    infoTooltip.textContent = `Agregar amigo`;
+    infoTooltip.style.display = 'flex';
+    infoTooltip.style.left = (add_friend.getBoundingClientRect().left - 45) + 'px';
+    infoTooltip.style.top = (add_friend.getBoundingClientRect().top + 30) + 'px';
+  });
+
+  add_friend.addEventListener('mouseleave', () => {
+    infoTooltip.style.display = 'none';
+  });
+
+  folder_icon.addEventListener('mousemove', (e) => {
+    infoTooltip.textContent = `Crear carpeta`;
+    infoTooltip.style.display = 'flex';
+    infoTooltip.style.left = (folder_icon.getBoundingClientRect().left - 40) + 'px';
+    infoTooltip.style.top = (folder_icon.getBoundingClientRect().top + 30) + 'px';
+  });
+
+  folder_icon.addEventListener('mouseleave', () => {
+    infoTooltip.style.display = 'none';
+  });
+
+  options_icon.addEventListener('mousemove', (e) => {
+    infoTooltip.textContent = `Opciones`;
+    infoTooltip.style.display = 'flex';
+    infoTooltip.style.left = (options_icon.getBoundingClientRect().left - 40) + 'px';
+    infoTooltip.style.top = (options_icon.getBoundingClientRect().top + 30) + 'px';
+  });
+
+  options_icon.addEventListener('mouseleave', () => {
+    infoTooltip.style.display = 'none';
+  });
+
+  filtro_icon.addEventListener('mousemove', (e) => {
+    infoTooltip.textContent = `Filtrar`;
+    infoTooltip.style.display = 'flex';
+    infoTooltip.style.left = (filtro_icon.getBoundingClientRect().left - 75) + 'px';
+    infoTooltip.style.top = (filtro_icon.getBoundingClientRect().top ) + 'px';
+  });
+
+  filtro_icon.addEventListener('mouseleave', () => {
     infoTooltip.style.display = 'none';
   });
 };
@@ -442,4 +704,34 @@ function toggleEstado() {
       inputEstado.style.display = 'none';
     }
   });
+};
+
+function actualizarUsuariosAside() {
+  let amigos = document.querySelector('.container-friends');
+  let append = ``;
+  grupoUsuarios.forEach(usuario => {
+    append += ` <div class="friend">
+                  <img class="icon" src="${usuario.icono}" alt="iconuser" height="40 px" width="40 px">
+                  <div class="info">
+                    <p class="nombre">${usuario.nombre}</p>
+                    <p class="status ${usuario.estado.toLowerCase().replace(/ /g, '-')}"><i></i>${usuario.estado}</p>
+                  </div>
+                </div>`;
+  });
+  amigos.innerHTML = append;
+
+};
+
+function expandirAmigos() {
+  const amigos = document.querySelector('.container-friends');
+  const generalAside = document.querySelector('.titulo-aside');
+
+    if(generalAside.textContent.search('▾') == 0){
+      generalAside.textContent = generalAside.textContent.replace('▾', '▸');
+      amigos.style.display = 'none';
+    }
+    else{
+      generalAside.textContent = generalAside.textContent.replace('▸', '▾');
+      amigos.style.display = 'flex';
+    }
 };

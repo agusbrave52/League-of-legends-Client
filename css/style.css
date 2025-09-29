@@ -69,7 +69,7 @@ body {
   position: relative;
   font-size: 18px;
   font-weight: 700;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   color: #fff1b4;
   height: 100%;
   display: flex;
@@ -101,7 +101,7 @@ body {
   border-radius: 15px;
   border: 1px solid #7a5400;
   align-items: center;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   justify-content: left;
   padding: 2px 0 2px 8px;
   cursor: default;
@@ -131,7 +131,7 @@ body {
   width: 100px;
   height: 25px;
   align-items: center;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   justify-content: left;
   padding: 2px 0 2px 8px;
   margin-top: 5px;
@@ -246,13 +246,13 @@ body {
   position: relative;
   border: 6px double #08101D;
   border-radius: 50%;
-  width: 40px;
+  width: 35px;
   height: 35px;
   margin-left: 2%;
   background-color: rgb(8.2487437186, 201.5050251256, 226.2512562814);
   font-size: large;
   font-weight: 800;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   color: aliceblue;
   cursor: pointer;
   z-index: 1;
@@ -289,13 +289,13 @@ body {
   cursor: pointer;
   font-size: 18px;
   font-weight: 700;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   border: none;
   clip-path: polygon(0% 20%, 0 0, 84% 0%, 98% 50%, 84% 100%, 0 100%, 0% 80%);
 }
 .container .dentro {
   position: relative;
-  background: linear-gradient(to bottom, #3fe3f8 20%, #0b90a1 50%, #0b8a9b);
+  background: linear-gradient(to bottom, #3fe3f8 20%, rgb(0, 157.8031914894, 170.5) 50%, rgb(0, 134.2021276596, 145) 100%);
   clip-path: polygon(0% 20%, 0 0, 84% 0%, 100% 50%, 84% 100%, 0 100%, 0% 80%);
   padding: 3px;
   z-index: 2;
@@ -342,7 +342,7 @@ body {
   z-index: 1;
   border-radius: 50%;
   /* box-shadow: 3.5px 0px $primary-color; */
-  background: linear-gradient(to bottom, #3fe3f8 20%, #0b90a1 50%, #0b8a9b);
+  background: linear-gradient(to bottom, #3fe3f8 20%, rgb(0, 157.8031914894, 170.5) 50%, rgb(0, 134.2021276596, 145) 100%);
   clip-path: inset(0 -10% 0 30%);
 }
 .container .bordes .borde-dificil::before {
@@ -368,7 +368,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  border: 3px solid rgba(21, 93, 102, 0.8078431373);
+  border: 3px solid #00575e;
   pointer-events: none;
   z-index: 0;
 }
@@ -473,7 +473,7 @@ body {
 .perfil .info-perfil {
   display: block;
   font-size: large;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   color: #DDCB9F;
 }
 .perfil .info-perfil .usuario {
@@ -501,7 +501,7 @@ body {
   border-radius: 8px;
   padding: 6px 14px;
   font-size: 1rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   z-index: 3;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
   transition: opacity 0.15s;
@@ -516,7 +516,7 @@ body {
   border-radius: 8px;
   padding: 6px 14px;
   font-size: 1rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   z-index: 3;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
   transition: opacity 0.15s;
@@ -550,7 +550,7 @@ body {
 }
 .perfil .info-perfil .ver-perfil {
   font-size: small;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   display: none;
   animation: aparecer-costado 1s forwards;
 }
@@ -569,7 +569,7 @@ body {
   position: absolute;
   font-size: small;
   color: #DDCB9F;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   width: 175px;
   height: 100px;
   background-color: #08101D;
@@ -655,7 +655,7 @@ body {
   border-radius: 8px;
   padding: 6px 14px;
   font-size: 1rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   z-index: 3;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
   text-align: center;
@@ -670,7 +670,7 @@ body {
   border: 2px solid #7a5400;
   padding: 0px 0px 25px 0px;
   font-size: small;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   z-index: 5;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
   width: 450px;
@@ -801,7 +801,7 @@ body {
 }
 
 .en-cola {
-  color: #3fe3f8;
+  color: rgb(0, 197, 211);
   cursor: pointer;
   animation: aparecer-fade 0.6s forwards;
   user-select: none;
@@ -857,7 +857,7 @@ body {
   padding: 10px;
   border: 1px solid #7a5400;
   color: #fff1b4;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
   pointer-events: none;
 }
@@ -872,7 +872,7 @@ body {
   border-radius: 8px;
   padding: 6px 14px;
   font-size: 1rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   font-style: normal;
   z-index: 999;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
@@ -887,7 +887,7 @@ body {
   padding: 10px;
   border: 1px solid #7a5400;
   color: #fff1b4;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
   cursor: text;
 }
@@ -900,56 +900,117 @@ aside {
   border-left: 1px solid #333;
   position: fixed;
   right: 0;
-  overflow: scroll;
-  overflow-x: hidden;
   top: 100px;
   display: flex;
   flex-direction: column;
   padding: 0;
 }
-aside::-webkit-scrollbar {
+aside .container-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+aside .container-social span {
+  font-size: larger;
+  font-weight: bolder;
+  color: #968e6e;
+  margin-left: 10px;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+aside .container-social .iconos-aside .icon-selection {
+  cursor: pointer;
+  margin: 7px;
+  font-size: larger;
+  color: #ad904c;
+  font-weight: bolder;
+}
+aside .container-social .iconos-aside .icon-selection:hover {
+  color: #fff1b4;
+}
+aside .container-friends-all {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+aside .container-friends-all::-webkit-scrollbar {
   width: 8px;
 }
-aside::-webkit-scrollbar-thumb {
+aside .container-friends-all::-webkit-scrollbar-thumb {
   background-color: #7a5400;
   border-radius: 30px;
 }
-aside::-webkit-scrollbar-thumb:hover {
+aside .container-friends-all::-webkit-scrollbar-thumb:hover {
   background-color: rgb(224, 154.2295081967, 0);
 }
-aside::-webkit-scrollbar-track {
+aside .container-friends-all::-webkit-scrollbar-track {
   background-color: #08101D;
 }
-aside p {
-  color: white;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+aside .container-friends-all .titulo-aside {
+  display: flex;
+  color: #968e6e;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   font-size: medium;
   font-weight: bold;
+  padding-left: 10px;
+  padding-right: 55%;
+  padding-bottom: 5px;
+  width: 100%;
+  cursor: pointer;
 }
-aside div {
+aside .container-friends-all .titulo-aside:hover {
+  background-color: rgba(150, 142, 110, 0.1);
+  color: #fff1b4;
+}
+aside .container-friends-all .container-friends {
   display: flex;
-  background-color: #08101D;
-  width: 90%;
-  height: 70px;
-  margin: 1px;
+  flex-direction: column;
 }
-aside .icon {
+aside .container-friends-all .container-friends .friend {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  margin: 4px;
+  cursor: pointer;
+}
+aside .container-friends-all .container-friends .friend:hover {
+  background-color: rgba(150, 142, 110, 0.1);
+}
+aside .container-friends-all .container-friends .friend .icon {
   border: rgba(161, 138, 5, 0.959) 3px solid;
   border-radius: 100%;
   margin: 10px;
+  width: 40px;
+  height: 40px;
 }
-aside span {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  font-size: large;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: white;
-  font-weight: bold;
+aside .container-friends-all .container-friends .friend .info {
+  display: block;
+  height: fit-content;
+  font-size: larger;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  color: #968e6e;
+  text-align: start;
 }
-aside .status {
-  flex-direction: row;
-  align-items: center;
+aside .container-friends-all .container-friends .friend .info p {
+  position: relative;
+  margin: 2px;
+}
+aside .container-friends-all .container-friends .friend .info p i {
+  position: relative;
+  right: 10px;
+  margin-top: 5px;
+}
+aside .container-friends-all .container-friends .friend .info p i::before {
+  content: "";
+  position: absolute;
+  top: -4.8px;
+  left: -4.8px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #08101D;
+  border-radius: 50%;
+}
+aside .container-friends-all .container-friends .friend .info .status {
+  margin-left: -14px;
 }
 
 /*# sourceMappingURL=style.css.map */
