@@ -581,9 +581,9 @@ body {
       }
     }
 
-    &:hover~.cuadro-info-Perfil {
+    /* &:hover~.cuadro-info-Perfil {
       display: flex;
-    }
+    } */
   }
 
   //-------------------- Info del perfil --------------------
@@ -811,106 +811,108 @@ body {
     text-align: center;
   }
 
-  // --------------------- Cuadro de info del perfil --------------------
-  .cuadro-info-Perfil {
+
+}
+
+// --------------------- Cuadro de info del perfil --------------------
+.cuadro-info-Perfil {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  pointer-events: none;
+  background: $dark-bg;
+  color: #DDCB9F;
+  border: 2px solid $color-borde;
+  padding: 0px 0px 25px 0px;
+  font-size: small;
+  font-family: $font-main;
+  z-index: 5;
+  box-shadow: 0 4px 16px #000a;
+  width: 450px;
+  height: 250px;
+  top: 20px;
+  right: 360px;
+  background-position: 70% 0%;
+  background-size: 170% 170%;
+  filter: contrast(1.1) saturate(1.2);
+  animation: aparecer-fade 0.6s forwards;
+
+  &::before {
+    content: "";
     position: absolute;
-    display: none;
-    flex-direction: column;
-    pointer-events: none;
-    background: $dark-bg;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba($dark-bg, 0) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(20, 20, 20, 1) 60%, rgba(20, 20, 20, 1) 100%);
+    z-index: 6;
+  }
+
+  .container-cuadro {
+    position: relative;
+    display: inline-flex;
+    padding-top: 27%;
+    width: 100%;
+    z-index: 7;
     color: #DDCB9F;
-    border: 2px solid $color-borde;
-    padding: 0px 0px 25px 0px;
-    font-size: small;
-    font-family: $font-main;
-    z-index: 5;
-    box-shadow: 0 4px 16px #000a;
-    width: 450px;
-    height: 250px;
-    top: 20%;
-    right: 360px;
-    background-position: 70% 0%;
-    background-size: 170% 170%;
-    filter: contrast(1.1) saturate(1.2);
-    animation: aparecer-fade 0.6s forwards;
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba($dark-bg, 0) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(20, 20, 20, 1) 60%, rgba(20, 20, 20, 1) 100%);
-      z-index: 6;
-    }
 
-    .container-cuadro {
+    .icon-user-cuadro {
       position: relative;
-      display: inline-flex;
-      padding-top: 27%;
-      width: 100%;
-      z-index: 7;
-      color: #DDCB9F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-position: center;
+      background-size: cover;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-left: 35px;
 
-
-      .icon-user-cuadro {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-position: center;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        width: 120%;
+        height: 120%;
+        background-image: url('../assets/borde1.png');
         background-size: cover;
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        margin-left: 35px;
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: -3px;
-          width: 120%;
-          height: 120%;
-          background-image: url('../assets/borde1.png');
-          background-size: cover;
-          background-position: center;
-          filter: blur(0.5px);
-        }
-      }
-
-      .info-user-cuadro {
-        margin-left: 35px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: medium;
-        font-weight: bold;
-        width: 60%;
-        height: 90px;
-
-        .usuario-cuadro {
-          font-size: x-large;
-          margin-bottom: 5px;
-        }
-
-        .rango-cuadro,
-        .desafios-cuadro {
-          font-size: small;
-          font-weight: normal;
-        }
-
-        .lema-cuadro {
-          color: #ddcb9f6b;
-        }
+        background-position: center;
+        filter: blur(0.5px);
       }
     }
 
-    .estado-cuadro {
-      position: absolute;
-      bottom: 10px;
-      left: 20px;
-      font-size: small;
+    .info-user-cuadro {
+      margin-left: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: medium;
       font-weight: bold;
-      z-index: 7;
+      width: 60%;
+      height: 90px;
+
+      .usuario-cuadro {
+        font-size: x-large;
+        margin-bottom: 5px;
+      }
+
+      .rango-cuadro,
+      .desafios-cuadro {
+        font-size: small;
+        font-weight: normal;
+      }
+
+      .lema-cuadro {
+        color: #ddcb9f6b;
+      }
     }
+  }
+
+  .estado-cuadro {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: small;
+    font-weight: bold;
+    z-index: 7;
   }
 }
 
@@ -1155,8 +1157,9 @@ aside {
       padding-bottom: 5px;
       width: 100%;
       cursor: pointer;
-      &:hover{
-        background-color: transparentize($shadow-text, 0.90);
+
+      &:hover {
+        background-color: color.scale($shadow-text, $alpha: -90%);
         color: $light-text;
       }
     }
@@ -1173,7 +1176,7 @@ aside {
         cursor: pointer;
 
         &:hover {
-          background-color: transparentize($shadow-text, 0.90);
+          background-color: color.scale($shadow-text, $alpha: -90%);
         }
 
         .icon {
@@ -1184,26 +1187,29 @@ aside {
           height: 40px;
         }
 
-        .info{
-          
+        .info {
+
           display: block;
           height: fit-content;
           font-size: larger;
           font-family: $font-main;
           color: $shadow-text;
           text-align: start;
-          p{
+
+          p {
             position: relative;
             margin: 2px;
-            i{
+
+            i {
               position: relative;
               right: 10px;
               margin-top: 5px;
-              &::before{
+
+              &::before {
                 content: "";
                 position: absolute;
-                top:-4.8px;
-                left:-4.8px;
+                top: -4.8px;
+                left: -4.8px;
                 width: 12px;
                 height: 12px;
                 border: 3px solid $dark-bg;
@@ -1211,7 +1217,8 @@ aside {
               }
             }
           }
-          .status{
+
+          .status {
             margin-left: -14px;
           }
         }
