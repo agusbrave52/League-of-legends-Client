@@ -1,242 +1,77 @@
-let Usuario = {
-  nombre: 'Usuario',
-  estado: 'En linea',
-  nivel: 200,
-  experiencia: 40,
-  lema: '#URU',
-  titulo: 'Ladron',
-  rango: 'Oro I',
-  desafios: 'Platino',
-  skinFavorita: './assets/pj/LucianForajido.jpg',
-  icono: './assets/icon-user1.png',
-  rp: 2600,
-  escencia: 83635
-};
+function Usuario(nombre, estado, nivel, experiencia, lema, titulo, rango, desafios, skinFavorita, icono, rp, escencia) {
+  this.nombre = nombre;
+  this.estado = estado;
+  this.nivel = nivel;
+  this.experiencia = experiencia;
+  this.lema = lema;
+  this.titulo = titulo;
+  this.rango = rango;
+  this.desafios = desafios;
+  this.skinFavorita = skinFavorita;
+  this.icono = icono;
+  this.rp = rp;
+  this.escencia = escencia;
+}
+
+let usuario = new Usuario('Usuario', 'En linea', 200, 40, '#URU', 'Ladron', 'Oro I', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user1.png', 2600, 83635);
 
 let grupoUsuarios = [
-  {
-    nombre: 'Tilinoso',
-    estado: 'En linea',
-    nivel: 150,
-    experiencia: 30,
-    lema: '#URU1',
-    titulo: 'Guerrero',
-    rango: 'Plata II',
-    desafios: 'Oro',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user1.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'Urito',
-    estado: 'Ausente',
-    nivel: 100,
-    experiencia: 20,
-    lema: '#URU2',
-    titulo: 'Mago',
-    rango: 'Bronce III',
-    desafios: 'Plata',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user2.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'Valmanway',
-    estado: 'En Cola',
-    nivel: 120,
-    experiencia: 25,
-    lema: '#URU3',
-    titulo: 'Asesino',
-    rango: 'Oro III',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user3.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'Uranaibaba11',
-    estado: 'Partida Casual',
-    nivel: 110,
-    experiencia: 15,
-    lema: '#URU4',
-    titulo: 'Soporte',
-    rango: 'Plata I',
-    desafios: 'Oro',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user4.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'MorganFreeman',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user5.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'MaximoCocceti',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user6.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'ElGatoBlack',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user7.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'Pinguito',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user8.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'Benito',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user9.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'Tocamelo',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user10.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'exkabio',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user11.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'frolita',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user12.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'dashana',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user13.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'APD Darky',
-    estado: 'En Cola',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user14.png',
-    rp: 2600,
-    escencia: 83635
-  },
-  {
-    nombre: 'Ash Nazg1',
-    estado: 'En linea',
-    nivel: 200,
-    experiencia: 40,
-    lema: '#URU',
-    titulo: 'Ladron',
-    rango: 'Oro I',
-    desafios: 'Platino',
-    skinFavorita: './assets/pj/LucianForajido.jpg',
-    icono: './assets/icon-user15.png',
-    rp: 2600,
-    escencia: 83635
-  }
+  new Usuario('Tilinoso', 'En linea', 150, 30, '#URU1', 'Guerrero', 'Plata II', 'Oro', './assets/pj/LucianForajido.jpg', './assets/icon-user1.png', 2600, 83635),
+  new Usuario('Urito', 'Ausente', 100, 20, '#URU2', 'Mago', 'Bronce III', 'Plata', './assets/pj/LucianForajido.jpg', './assets/icon-user2.png', 2600, 83635),
+  new Usuario('Valmanway', 'En Cola', 120, 25, '#URU3', 'Asesino', 'Oro III', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user3.png', 2600, 83635),
+  new Usuario('Uranaibaba11', 'Partida Casual', 110, 15, '#URU4', 'Soporte', 'Plata I', 'Oro', './assets/pj/LucianForajido.jpg', './assets/icon-user4.png', 2600, 83635),
+  new Usuario('MorganFreeman', 'En linea', 200, 40, '#URU', 'Ladron', 'Oro I', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user5.png', 2600, 83635),
+  new Usuario('MaximoCocceti', 'En linea', 200, 40, '#URU', 'Ladron', 'Oro I', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user6.png', 2600, 83635),
+  new Usuario('ElGatoBlack', 'En linea', 200, 40, '#URU', 'Ladron', 'Oro I', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user7.png', 2600, 83635),
+  new Usuario('Paquito', 'En linea', 200, 40, '#URU', 'Ladron', 'Oro I', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user8.png', 2600, 83635),
+  new Usuario('Benitez', 'En linea', 200, 40, '#URU', 'Ladron', 'Oro I', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user9.png', 2600, 83635),
+  new Usuario('Tramadol', 'En linea', 200, 40, '#URU', 'Ladron', 'Oro I', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user10.png', 2600, 83635),
+  new Usuario('Regeder', 'En linea', 200, 40, '#URU', 'Ladron', 'Oro I', 'Platino', './assets/pj/LucianForajido.jpg', './assets/icon-user11.png', 2600, 83635)
 ];
 
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
-  actualizarPerfil(Usuario);
+  actualizarPerfil(usuario);
   inicializarNavSelect();
   iniciarInfos();
   IniciarInfoConMouse();
   togglePerfil();
   toggleEstado();
   actualizarUsuariosAside();
+
+  const friends = document.getElementsByClassName('friend');
+  Array.from(friends).forEach(friend => {
+    friend.addEventListener('mouseenter', function () {
+      actualizarTarjetaPerfil(grupoUsuarios.find(usuario => usuario.nombre === friend.querySelector('.nombre').textContent));
+    });
+      friend.addEventListener('mouseleave', function () {
+        document.querySelector('.cuadro-info-Perfil').style.display = 'none';
+      });
+  });
+});
+
+document.getElementsByClassName('experiencia')[0].addEventListener('mouseenter', function () {
+  document.querySelector('.icon-user-cuadro').style.backgroundImage = `url('${usuario.icono}')`;
+  document.querySelector('.usuario-cuadro').textContent = usuario.nombre;
+  document.querySelector('.lema-cuadro').textContent = usuario.lema;
+  document.querySelector('.titulo-cuadro').textContent = usuario.titulo;
+  document.querySelector('.rango-cuadro').textContent = usuario.rango;
+  document.querySelector('.desafios-cuadro').textContent = usuario.desafios;
+  let estado = document.querySelector('.estado-cuadro');
+  estado.classList.remove('en-linea', 'ausente', 'en-cola', 'partida-casual');
+  estado.classList.add(usuario.estado.toLowerCase().replace(/ /g, '-'));
+  estado.innerHTML = `<i class="estadoIcon"></i><span class="estadoTexto">${usuario.estado}</span>`;
+  let cuadro = document.querySelector('.cuadro-info-Perfil');
+  cuadro.style.backgroundImage = `url(${usuario.skinFavorita})`;
+  cuadro.style.display = 'flex';
+  cuadro.style.top = (document.querySelector('.experiencia').getBoundingClientRect().top + 30) + 'px';
+});
+
+document.getElementsByClassName('experiencia')[0].addEventListener('mouseleave', function () {
+  document.querySelector('.cuadro-info-Perfil').style.display = 'none';
 });
 
 
@@ -257,6 +92,7 @@ function cambiarEstado(direccion = 1) {
 
   let texto = '';
   let clase = '';
+
   switch (estado) {
     case 1:
       texto = 'En línea';
@@ -281,7 +117,7 @@ function cambiarEstado(direccion = 1) {
   estadoElem.innerHTML = `<i onclick="cambiarEstado()" class="estadoIcon"></i><span class="estadoTexto" onclick="toggleEstado()">${texto}</span>`;
   estadoCuadro.classList.add(clase);
   estadoCuadro.innerHTML = `<i onclick="cambiarEstado()" class="estadoIcon"></i><span class="estadoTexto" onclick="toggleEstado()">${texto}</span>`;
-  Usuario.estado = texto;
+  usuario.estado = texto;
 
   IniciarInfoConMouse();
   toggleEstado();
@@ -306,21 +142,22 @@ function abrirDeslizador() {
 
 function actualizarExp(value) {
   document.querySelector('.experiencia').style.setProperty('--percent', value);
-  Usuario.experiencia = value;
+  usuario.experiencia = value;
 };
+
 
 function generarNumeroAleatorio() {
   const numeroAleatorio = Math.floor(Math.random() * 700) + 1; // Genera un número aleatorio entre 1 y 700
-  Usuario.nivel = numeroAleatorio;
-  document.querySelector('.lvl').setAttribute('data-lvl', Usuario.nivel);
+  usuario.nivel = numeroAleatorio;
+  document.querySelector('.lvl').setAttribute('data-lvl', usuario.nivel);
 };
 
 function cambiarUsuario() {
   const nuevoUsuario = document.getElementById('nuevoUsuario').value;
   if (nuevoUsuario.trim() !== '') {
-    Usuario.nombre = nuevoUsuario;
-    document.querySelector('.usuario').textContent = Usuario.nombre;
-    document.querySelector('.usuario-cuadro').textContent = Usuario.nombre;
+    usuario.nombre = nuevoUsuario;
+    document.querySelector('.usuario').textContent = usuario.nombre;
+    document.querySelector('.usuario-cuadro').textContent = usuario.nombre;
     document.getElementById('nuevoUsuario').value = ''; // Limpiar el campo de entrada
   }
 };
@@ -329,18 +166,51 @@ function actualizarPerfil(usuario) {
   document.querySelector('.experiencia').style.setProperty('--percent', usuario.experiencia);
   document.querySelector('.lvl').setAttribute('data-lvl', usuario.nivel);
   document.querySelector('.icon-user').style.backgroundImage = `url(${usuario.icono})`;
-  document.querySelector('.icon-user-cuadro').style.backgroundImage = `url('${usuario.icono}')`;
   document.querySelector('.usuario').textContent = usuario.nombre;
-  document.querySelector('.usuario-cuadro').textContent = usuario.nombre;
-  document.querySelector('.cuadro-info-Perfil').style.backgroundImage = `url(${usuario.skinFavorita})`;
   document.querySelector('#riot-pts-cant').textContent = usuario.rp;
   const esenciaAzul = document.querySelector('#esencia-azul-cant');
-  if (Usuario.escencia > 9999) {
-    esenciaAzul.textContent = (Usuario.escencia / 1000).toFixed(1) + ' K';
+  if (usuario.escencia > 9999) {
+    esenciaAzul.textContent = (usuario.escencia / 1000).toFixed(1) + ' K';
   } else {
-    esenciaAzul.textContent = Usuario.escencia;
+    esenciaAzul.textContent = usuario.escencia;
   }
 };
+
+function actualizarTarjetaPerfil(usuario) {
+  let usuarioParseado = typeof usuario === 'string' ? JSON.parse(usuario) : usuario;
+  document.querySelector('.icon-user-cuadro').style.backgroundImage = `url('${usuarioParseado.icono}')`;
+  document.querySelector('.usuario-cuadro').textContent = usuarioParseado.nombre;
+  document.querySelector('.lema-cuadro').textContent = usuarioParseado.lema;
+  document.querySelector('.titulo-cuadro').textContent = usuarioParseado.titulo;
+  document.querySelector('.rango-cuadro').textContent = usuarioParseado.rango;
+  document.querySelector('.desafios-cuadro').textContent = usuarioParseado.desafios;
+  let cuadro = document.querySelector('.cuadro-info-Perfil');
+  cuadro.style.display = 'flex';
+  let grupoAmigos = document.querySelectorAll('.friend');
+  let amigoSeleccionado = Array.from(grupoAmigos).find(amigo => amigo.querySelector('.nombre').textContent === usuarioParseado.nombre);
+  cuadro.style.backgroundImage = `url(${usuarioParseado.skinFavorita})`;
+  if (amigoSeleccionado) {
+    const margen = 12;
+    const topAmigo = amigoSeleccionado.getBoundingClientRect().top;
+    const altoTarjeta = cuadro.getBoundingClientRect().height;
+
+    let nuevoTop = topAmigo;
+    const bottomTarjeta = nuevoTop + altoTarjeta;
+    const limiteInferior = window.innerHeight - margen;
+
+    // Si se pasa del borde inferior, la subimos lo necesario
+    if (bottomTarjeta > limiteInferior) {
+      const desborde = bottomTarjeta - limiteInferior;
+      nuevoTop = Math.max(margen, nuevoTop - desborde);
+    }
+    cuadro.style.top = `${nuevoTop}px`;
+  }
+  let estado = document.querySelector('.estado-cuadro');
+  estado.classList.remove('en-linea', 'ausente', 'en-cola', 'partida-casual');
+  estado.classList.add(usuarioParseado.estado.toLowerCase().replace(/ /g, '-'));
+  estado.innerHTML = `<i class="estadoIcon"></i><span class="estadoTexto">${usuarioParseado.estado}</span>`;
+  
+}
 
 function inicializarNavSelect() {
   const navItems = document.querySelectorAll(".barra-nav-select");
@@ -393,7 +263,7 @@ function iniciarInfos() {
   const infoTooltip = document.getElementById('infoTooltip');
 
   esenciaAzul.addEventListener('mousemove', (e) => {
-    infoTooltip.textContent = `${Usuario.escencia} Esencia Azul`;
+    infoTooltip.textContent = `${usuario.escencia} Esencia Azul`;
     infoTooltip.style.display = 'flex';
     infoTooltip.style.left = (esenciaAzul.getBoundingClientRect().left - 50) + 'px';
     infoTooltip.style.top = (esenciaAzul.getBoundingClientRect().top + 30) + 'px';
@@ -404,7 +274,7 @@ function iniciarInfos() {
   });
 
   rp.addEventListener('mousemove', (e) => {
-    infoTooltip.textContent = `${Usuario.rp} RP`;
+    infoTooltip.textContent = `${usuario.rp} RP`;
     infoTooltip.style.display = 'flex';
     infoTooltip.style.left = (rp.getBoundingClientRect().left - 10) + 'px';
     infoTooltip.style.top = (rp.getBoundingClientRect().top + 35) + 'px';
@@ -528,7 +398,7 @@ function iniciarInfos() {
     infoTooltip.textContent = `Filtrar`;
     infoTooltip.style.display = 'flex';
     infoTooltip.style.left = (filtro_icon.getBoundingClientRect().left - 75) + 'px';
-    infoTooltip.style.top = (filtro_icon.getBoundingClientRect().top ) + 'px';
+    infoTooltip.style.top = (filtro_icon.getBoundingClientRect().top) + 'px';
   });
 
   filtro_icon.addEventListener('mouseleave', () => {
@@ -709,7 +579,8 @@ function toggleEstado() {
 function actualizarUsuariosAside() {
   let amigos = document.querySelector('.container-friends');
   let append = ``;
-  grupoUsuarios.forEach(usuario => {
+  grupoUsuarios.forEach((usuario) => {
+    // al pasar mouse por encima del amigo, se actualiza la tarjeta de perfil con su info
     append += ` <div class="friend">
                   <img class="icon" src="${usuario.icono}" alt="iconuser" height="40 px" width="40 px">
                   <div class="info">
@@ -717,21 +588,22 @@ function actualizarUsuariosAside() {
                     <p class="status ${usuario.estado.toLowerCase().replace(/ /g, '-')}"><i></i>${usuario.estado}</p>
                   </div>
                 </div>`;
+
   });
   amigos.innerHTML = append;
-
 };
 
 function expandirAmigos() {
   const amigos = document.querySelector('.container-friends');
   const generalAside = document.querySelector('.titulo-aside');
 
-    if(generalAside.textContent.search('▾') == 0){
-      generalAside.textContent = generalAside.textContent.replace('▾', '▸');
-      amigos.style.display = 'none';
-    }
-    else{
-      generalAside.textContent = generalAside.textContent.replace('▸', '▾');
-      amigos.style.display = 'flex';
-    }
+  if (generalAside.textContent.search('▾') == 0) {
+    generalAside.textContent = generalAside.textContent.replace('▾', '▸');
+    amigos.style.display = 'none';
+  }
+  else {
+    generalAside.textContent = generalAside.textContent.replace('▸', '▾');
+    amigos.style.display = 'flex';
+  }
 };
+

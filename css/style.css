@@ -360,9 +360,6 @@ body {
   position: relative;
   width: 100%;
   z-index: 0;
-  /* &:hover~.borde-dificil {
-
-  } */
 }
 .container .bordes .borde-dentro::after {
   content: "";
@@ -371,6 +368,11 @@ body {
   border: 3px solid #00575e;
   pointer-events: none;
   z-index: 0;
+}
+.container .bordes .borde-dentro {
+  /* &:hover~.borde-dificil {
+
+  } */
 }
 @keyframes box-shadow {
   0% {
@@ -467,8 +469,10 @@ body {
   margin: auto;
   color: #DDCB9F;
 }
-.perfil .experiencia:hover ~ .cuadro-info-Perfil {
-  display: flex;
+.perfil .experiencia {
+  /* &:hover~.cuadro-info-Perfil {
+    display: flex;
+  } */
 }
 .perfil .info-perfil {
   display: block;
@@ -660,7 +664,8 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
   text-align: center;
 }
-.perfil .cuadro-info-Perfil {
+
+.cuadro-info-Perfil {
   position: absolute;
   display: none;
   flex-direction: column;
@@ -675,21 +680,21 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6666666667);
   width: 450px;
   height: 250px;
-  top: 20%;
+  top: 20px;
   right: 360px;
   background-position: 70% 0%;
   background-size: 170% 170%;
   filter: contrast(1.1) saturate(1.2);
   animation: aparecer-fade 0.6s forwards;
 }
-.perfil .cuadro-info-Perfil::before {
+.cuadro-info-Perfil::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(8, 16, 29, 0) 0%, rgba(20, 20, 20, 0.8) 40%, rgb(20, 20, 20) 60%, rgb(20, 20, 20) 100%);
   z-index: 6;
 }
-.perfil .cuadro-info-Perfil .container-cuadro {
+.cuadro-info-Perfil .container-cuadro {
   position: relative;
   display: inline-flex;
   padding-top: 27%;
@@ -697,7 +702,7 @@ body {
   z-index: 7;
   color: #DDCB9F;
 }
-.perfil .cuadro-info-Perfil .container-cuadro .icon-user-cuadro {
+.cuadro-info-Perfil .container-cuadro .icon-user-cuadro {
   position: relative;
   display: flex;
   align-items: center;
@@ -709,7 +714,7 @@ body {
   border-radius: 50%;
   margin-left: 35px;
 }
-.perfil .cuadro-info-Perfil .container-cuadro .icon-user-cuadro::after {
+.cuadro-info-Perfil .container-cuadro .icon-user-cuadro::after {
   content: "";
   position: absolute;
   top: -3px;
@@ -720,7 +725,7 @@ body {
   background-position: center;
   filter: blur(0.5px);
 }
-.perfil .cuadro-info-Perfil .container-cuadro .info-user-cuadro {
+.cuadro-info-Perfil .container-cuadro .info-user-cuadro {
   margin-left: 35px;
   display: flex;
   flex-direction: column;
@@ -730,19 +735,19 @@ body {
   width: 60%;
   height: 90px;
 }
-.perfil .cuadro-info-Perfil .container-cuadro .info-user-cuadro .usuario-cuadro {
+.cuadro-info-Perfil .container-cuadro .info-user-cuadro .usuario-cuadro {
   font-size: x-large;
   margin-bottom: 5px;
 }
-.perfil .cuadro-info-Perfil .container-cuadro .info-user-cuadro .rango-cuadro,
-.perfil .cuadro-info-Perfil .container-cuadro .info-user-cuadro .desafios-cuadro {
+.cuadro-info-Perfil .container-cuadro .info-user-cuadro .rango-cuadro,
+.cuadro-info-Perfil .container-cuadro .info-user-cuadro .desafios-cuadro {
   font-size: small;
   font-weight: normal;
 }
-.perfil .cuadro-info-Perfil .container-cuadro .info-user-cuadro .lema-cuadro {
+.cuadro-info-Perfil .container-cuadro .info-user-cuadro .lema-cuadro {
   color: rgba(221, 203, 159, 0.4196078431);
 }
-.perfil .cuadro-info-Perfil .estado-cuadro {
+.cuadro-info-Perfil .estado-cuadro {
   position: absolute;
   bottom: 10px;
   left: 20px;
